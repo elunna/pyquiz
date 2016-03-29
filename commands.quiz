@@ -1,0 +1,467 @@
+
+0 :: No permissions.
+!10 :: Run command #10 from the history.
+!-10 :: Run the 10th to last command.
+110 :: POP3 Port
+143 :: IMAP4 Port
+1 :: Execute permissions
+20 :: FTP port (#1)
+21 :: FTP port (#1)
+22 :: SSH port
+23 :: Telnet Port
+25 :: SMTP Port
+2 :: Write permissions
+3 :: Write and execute permissions
+43 :: WHOIS Port
+4 :: Read permissions
+53 :: DNS Port
+5 :: Read and execute permissions
+67 :: DHCP Port
+6 :: Read and write permissions
+79 :: Finger Port
+7 :: Read, write, and execute permissions
+80 :: HTTP Port
+a :: All users permissions.
+alias :: View all aliases.
+apropos keyword | Search the manual page names and descriptions for "keyword"
+apt-cache pkgnames :: List all the available packages
+apt-cache search keyword :: Find packages that include "keyword".
+apt-cache search linux-image :: See all available kernels for download.
+apt-cache show package :: Show a package description and details.
+apt-cache stats :: Check overall statistics on the cache.
+apt-get autoclean :: Removes .deb files that are no longer needed.
+apt-get autoremove package :: Remove an installed package and dependencies.
+apt-get autoremove :: Remove packages installed by other packages that are no longer needed.
+apt-get build-dep package :: Search repos and install build dependencies for "package".
+apt-get check :: Update package lists and check for broken dependencies.
+apt-get dist-upgrade :: Upgrade all installed packaged using "smart" conflict resolution.
+apt-get -f install :: Fix broken packages.
+apt-get install package :: Install package "package"
+apt-get install -s package :: Simulate the installation of "package"
+apt-get purge linux-image :: Remove a specific kernel "linux-image"
+apt-get purge package :: Completely remove a package and associated config files.
+apt-get remove package :: Remove "package" (but keep config files)
+apt-get update :: Update packages and source list.
+apt-get upgrade :: Upgrade alsl installed packages
+arch :: print machine architecture
+awk '1; { print ""}' file :: (awk) Double space a line
+awk '{print $1}' file :: Using awk, print the 1st column of a file.
+awk '{print $1}' file :: Using awk, print the 2nd column of a file.
+!! :: "Bang Bang" - Repeat last command.
+basename path :: Remove directory and suffix from a filename "path".
+bc -l :: Start calculator in interactive mode
+bg :: Lists stopped or background jobs
+/boot/grub/grub.cfg :: Location of grub config file.
+cal :: Display the system calendar
+cal -j :: Display system calendar using Julian date.
+cal -y :: Display a calendar of all months of the year.
+cat /etc/fstab :: Display static file system information.
+cat /etc/protocols :: View internet protocols
+cat /etc/services :: View network services, internet style
+cat file :: Display contents of "file"
+cat file | xclip -selection c :: Copy "file" to xclip clipboard
+cat -n file :: Display contents of "file" with line numbers
+cat /proc/sys/vm/swappiness :: Shows the swappiness setting.
+cat x >> file :: Append contents of "x" to "file"
+cd - :: Go back to last used directory
+cd ~ :: Go to the home directory.
+cd -P link :: Follow a symlink (supposedly)
+chgrp --preserve-root :: cdgrp with protection
+chmod a+x :: Give executable permission to all users
+chmod --preserve-root :: cdmod with protection
+clear :: Clear the screen
+cmd& :: Run "cmd" as a background process
+cmd | tee -a file :: Send "cmd" output to standard output AND append to "file".
+cmd | tee file :: Send "cmd" output to "file" AND standard output.
+cmp a b :: Compare two files "a" and "b", report if they are different.
+compgen -A function :: show all the bash functions
+compgen -a :: List all the bash shell aliases available to you
+compgen -b :: show all the bash built-ins
+compgen -c :: To list all the commands available to you
+compgen -k :: show all the bash keywords
+cowsay hello :: Make the cow say hello
+cp -i x y :: Copy file "x" to "y", with interactive warning
+cp -r x y :: Copy directory "x" to "y" recursively
+cp -u x y :: Copy file "x" to "y", only overwrite if source is newer.
+cp x y :: Copy file "x" to "y"
+crontab -e :: Open crontab
+crontab -l > backup :: Backup the crontab file to "backup"
+crontab -l :: List crontab entries
+crontab -u user -l :: View crontab entries for a specific "user"
+cut -c1 file :: Cut the first character from each line of "file"
+cut -c5-10 file :: Cut the characters 5-10 from each line of "file"
+cut -c-5 file :: Cut everything past the first 5 characters of "file"
+cut -c5- file :: Cut the first 5 characters from each line of "file"
+cut -d ':' -f1,3 file :: Cut fields 1 and 3 from file, delimiter=':'
+cut -d ':' -f1,3 file :: Cut fields 1 through 3 from file, delimiter=':'
+cut -d: -f1 /etc/passwd :: List all users you can use:
+cut -d ':' -f1 file :: Cut the first field of file, delimiter=':'
+date 010100002000.00 :: Change the date to Jan 1st, 2000 exactly midnight.(hint: mmdd
+date :: Display system date
+date +%m %d %y :: Display date (month date year)
+date mmddhhiiyyyy.ss :: The standard format for changing the date
+date -u :: Display Greenwich Mean Time
+date +%Y%m%d -s "20000101" :: Change the date to Jan 1st, 2000.
+date +%Y%m%d -s "20081128" :: Change the date to Nov 11 2008
+dc :: Reverse polish notation calculator
+dd if=/dev/random of=/dev/sda :: Write junk onto the Hard Drive
+dd if=/dev/zero of=/dev/sda :: Write 0's onto the Hard Drive
+declare -f :: List all function names and definitions
+declare -F :: List only function names.
+/dev/dsp :: First audio device
+/dev/js0 :: Standard gameport joystick
+/dev/loop0 :: Loopback device
+/dev/lp0 :: First parallel port, LPT1(printers, scanners, etc).
+/dev/null :: "black hole", data sent here is lost/auto-discarded
+/dev/psaux :: PS/2 mouse connection (mice, keyboards).
+/dev/random :: Random # generator
+/dev/scd :: First SCSI CD-ROM device.
+/dev/sda :: First SCSI device (HDD, Memory Stick, ext storage devices, etc).
+/dev/ttyS0 :: First serial port, COM1 (mice, modems).
+/dev/urandom ::
+/dev/usb :: USB Devices directory
+/dev/zero :: 
+df -h :: Report file system disk space usage clearly.
+df -i :: Display the inode information of the file system.
+diff file1 file2 :: Show the differences between "file1" and "file2"
+diff -w file1 file2 :: Show the differences between "file1" and "file2", ignoring whitespace
+dig domain :: Get DNS information for "domain"
+dlocate package :: Determine which installed package owns "package"
+dmesg :: Print the kernel ring buffer message log.
+dpkg -l | grep package:: Check whether a package is installed.
+dpkg --list | grep linux-image :: View/list all installed kernels on your system
+dpkg -l keyword :: Find packages that include "keyword" (dpkg version)
+dpkg -L package :: List files in "package"
+dpkg --print-avail package :: Show a package description and details.(dpkg version)
+dpkg-reconfigure package :: Reconfigure the named package.
+du -ach :: View disk usage details.
+du -cksh :: Calculate the size of the current folder.
+du -cksh dir :: Calculate the size of "dir".
+du -s /home/* || View how much space user home directories are using.
+du -sh /var/cache/apt/archives :: Display how much space cached packages are consuming.
+echo -e ${PATH//:/\\n} :: List all directories in the PATH variable
+echo $PATH :: View PATH variable.
+echo $SHELL :: Display what shell you are currently using.
+eject :: Eject media device.
+eject -t :: Close CD-Rom Tray
+env :: View all environment variables:
+/etc/group :: Information about groups on the system.
+/etc/host.conf :: Location of the system's host config file.
+/etc/hosts :: Location of hosts file.
+/etc/init.d :: Startup scripts directory
+/etc/motd :: Location of the Message Of The Day
+/etc/mtab :: Contains a list of all currently mounted devices.
+/etc/passwd :: User account info
+/etc/profile :: The bash system profile file.
+/etc/shells :: Contains a list of the available shells.
+/etc/sysctl.conf :: The kernel paramters by sysctl config file.
+factor 100 :: Display the prime factors of 100
+ffmpeg -i vid.mpg vid.avi :: Convert vid.mpg to vid.avi.
+fg :: Go back to upper process (foreground)
+file f :: Determine the file type of "f"
+find . -empty :: Find all empty files under current dir.
+find ~ -empty :: Find all the empty files under the home directory.
+find . -iname x 2>/dev/null :: Find "x" from current dir, case insensitive (ignore errors)
+find . -iname x :: Find "x" from current dir, case insensitive
+find -inum x -exec rm -i  {} \; :: Remove a file "x" by inode
+find ~ -maxdepth 1 -name '.*' -type f :: Find config files in home directory
+find . -maxdepth 1 -type f ! -name "*.*" :: Find all files w/o extensions in current dir.
+find / -mount -type f -iname x :: Find file(s) "x" from root, case insensitive.
+find . -mtime -1 -type f :: Find all files edited in the last day
+find . -name *.mp3 :: Find all mp3s under current dir.
+find . -name *x :: Find files ending with "x", case sensitive
+find . -name x* :: Find files starting with "x", case sensitive
+find / -perm -2 -type f -print :: Find all world-writable files
+find . -type l :: Find all symlinks under current directory tree.
+^foo^bar :: Repeat the last command and substitute "foo" with "bar" 
+:(){ :|: & };: :: Fork bomb
+free :: View free memory/disk info
+gcc x.c -o2 x :: Compile C code file "x.c" (second level of optimization)
+gcc x.c -o3 x :: Compile C code file "x.c" (third level of optimization)
+gcc x.c -o :: Compile C code file "x.c" to the default name.
+gcc x.c -ofast x :: Compile C code file "x.c" (fast optimization)
+gcc x.c -o x :: Compile C code file "x.c" (first level of optimization)
+gcc x.c -Wall -o x :: Compile C code file "x.c" (increased warning checks)
+gcc x.c -Werror -o x :: Compile C code file "x.c" (no compile with warnings)
+gcc x.c -Wextra -o x :: Compile C code file "x.c" (ALL warning checks)
+g :: Group permissions
+git add --all :: (git) Add all files tothe staging area
+git add :: (git) Add a file to the staging area
+git branch all :: (git) List all branches, including remote.
+git branch -d b :: (git) Delete branch "b"
+git branch :: (git) List all branches
+git checkout -b :: (git) Create a new branch and checkout.
+git checkout :: (git) Checkout a branch
+git commit -m :: (git) Commit with a messge
+git commit -v --amend :: (git) Amend the last commit
+git config --global -e :: (git): Open the config file?
+git config --list :: (git) List the config file contents
+git diff :: (git): See the differences between the other branch/tree
+git log --decorate :: (git) Show the log, with extra details.
+git log --graph :: (git) Show the log with graphical representation.
+git log --oneline :: (git) Show the log, one line per commit.
+git merge :: (git) Merge a branch into this one.
+git pull :: (git) Pull
+git pull --rebase :: (git) ???????????/
+git push :: (git) Push
+git reset file :: (git) Unstage a file "file"
+git reset HEAD -- :: (git) ?????????
+git stash apply :: (git) Pop (and leave a copy of) the first stashed set of changes.
+git stash clear :: (git) Delete all in the stash
+git stash drop :: (git) drop a stash point?????
+git stash drop :: (git) Remove a stashed set of changes
+git stash :: (git) Oush a new stash onto your stack.
+git stash list :: (git) List stashed changes
+git stash pop :: (git) Pop & remove the first stashed set of changes.
+git stash save msg :: (git) Stash something with msg "msg"
+git status :: (git) Show status
+git status -s :: (git) Show status, short form
+gnome-system-monitor :: Gnome System Monitor or /usr/bin/gnome-system-monitor
+grep -A 5 "def" file :: Grep and display 5 lines after matches in "file", case sensitive.
+grep -B 5 "def" file :: Grep and display 5 lines before matches in "file", case sensitive.
+grep -C 5 "def" file :: Grep and display 5 lines around matches in "file", case sensitive.
+grep -c "def" *.py :: Count the number of "def"s in all .py files.
+grep "def" file :: Grep for "def" in the single file "file", case sensitive
+grep "def" *.py :: Search all .py files for lines containing "def"
+grep -i "def" file :: Grep for "def" in the single file "file", case insensitive
+grep -iw "def" file :: Grep for the full word "def" in "file, case insensitive.
+grep -l "def" *.py :: Display filenames which contain the text that matches "def" from all *.py
+grep -n "def" *.py :: Grep *.py files for "def" and show the lines along with the line numbers.
+grep -r "def" :: Grep all files under current directory recursively for "def"
+grep -v "def" *.py :: Print lines that do not have "def" in .py files.
+grep -ve ^# file :: grep a file and don't show commented lines(#)
+grep -ve ^$ file :: grep a file and don't show empty lines
+gzip -d files.gz :: Decompresses "files.gz" back to files
+gzip files :: Compress "files" into files.gz
+head -20 file :: Display the first 20 lines of "file"
+head file :: Display the first 10 lines of "file"
+history –c :: Clear history
+history :: Display the command history.
+history | grep test :: Search the command history for "test"
+hostname :: Show the system's hostname
+host website :: Lookup the host name "website"
+htop :: A better 'top'.
+httpd.conf :: The apache web server config file.
+info :: View the Info docs
+jobs -l :: View current jobs
+killall proc :: Kill all process named "proc"*
+kill PID :: Kill process with "PID"
+ldd p :: Find out which libraries the dynamic executable "p" loads.
+less file :: Display "file" in a nice pager.
+lilo.conf :: The LILO boot loader config file.
+link src link :: Create a hard link to source as link.
+ln -s src link :: Create a symbolic link to source as link.
+locate -i index.html :: List locations you can find index.html (case insensitive)
+locate index.html :: List locations you can find index.html.
+look "the" file :: Look for any lines in file which contain "the" as a prefix.
+lpc :: Run the printer control tool
+ls -1 | wc -l :: List the number of files in the current directory
+ls /boot :: List files that are on my /boot partition
+lsb_release -a :: Display all available info about the current distribution.
+ls ~/.cache/thumbnails/normal :: View all the files in the thumbnail cache
+lscpu :: Get the server cpu info
+ls /dev :: List device special files
+ls | grep word :: Search directory for a filename with "word" in it.
+ls -i :: List files with inode numbers
+ls -lS :: List by size
+ls -lXB :: List alphabetically by extension
+ls -/media/$USER :: List media devices (mounted?)
+lsof -p $$ :: list all the files open for the current open shell.
+lsof | wc -l :: Display the total count of all the files currently open.
+lspci :: Lists all PCI buses and devices connected to them.
+ls -r :: List in reverse
+ls -R :: List recursively
+ls -tl :: List by time modified
+lsusb :: Lists all USB devices
+lsusb -v :: Lists detailed info about all USB devices
+ltrace p :: Trace the library calls of a process "p".
+man cmd | col -b > cmd.txt :: Save a man page (for "cmd") as a txt file and remove control characters.
+man cmd :: List man page for "cmd"
+mkdir d :: Create a new directory "d"
+mkdir -p x/y/z :: Create a new directory tree "x/y/z"
+mkfs.ext4 /dev/sda1 :: Format the harddrive and create a new ext4 file system.
+mktemp -p . :: Create a randomly generated temp filename in the current directory.
+mount -l :: Lists all mounted filesystems.
+mount -o loop iso dir :: Mount an "iso" to a specific "dir"
+mplayer *.mp3 :: Play all mp3s in a directory
+mv ~ /dev/null :: Move your home directory to a black hole.
+mv -i x y :: Move file "x" to "y", with interactive warning
+mv -u x y :: Move file "x" to "y", overwrite older.
+mv x y :: Move file "x" to "y"
+named.conf :: DNS name server (BIND) config file
+netstat -an :: get a list of all current active connections.
+netstat -tulamp :: Quickly list all TCP/UDP ports on the server.
+od -b file :: Display a file in octal format.
+od -c file :: Display a file in character format.
+od -o file :: Display a file as 2-byte octal units.
+o :: Other users permissions
+pgrep bash :: Return the process ID of bash.
+ping -c 4 www.google.com :: Ping google
+pm-suspend :: Suspend the computer
+/proc/cmdline :: Shows Kernel comand line
+/proc/config.gz :: gzip-compressed configuration file of the kernel currently running
+/proc/cpuinfo :: Info on the server cpu(older way)
+procinfo :: Display system statistics gathered from /proc
+/proc/interrupts :: Info about the allocation and use of CPU interrupts:
+/proc/loadavg :: Contains info about load average figures.
+/proc/meminfo :: Detailed information about memory usage
+/proc/modules :: Shows Kernel modules loaded.
+/proc/partitions :: Contains info about the partitions on the hard disk.
+ps aux | grep test :: Find "test" in the current running processes
+ps aux :: List every process on the system
+ps -efH :: View info about running threads.
+ps -ejH :: Print a process tree (via ps).
+pstree :: Print a process tree.
+ps -U root -u root u :: See every process running as root
+pwd :: Print name of current working directory
+python -i code.py :: Run "code.py" with Python and use the interactive interpreter mode 
+!! :: Refer to the previous command.
+rename 's/\.txt/\.html/' * :: Rename all .txt files to .html files.
+rev f :: Display the contents of file "f" in reverse.
+rm * :: Delete all files in current directory.
+rmdir d :: Remove directory "d" if it's empty.
+rm file :: Delete specified "file"
+rm -i file :: Delete specific "file", with warning
+rm -I --preserve-root :: rm: Prompt if deleting 3+ files
+rm -r dir :: Recursively delete all files and directories from "dir"
+rm -rf .* :: Delete all your configuration files.
+rm -rf ~ :: Delete everything in home folder
+rm -rf / :: Delete everything on the hard drive.
+rm -rfv ~/.local/share/Trash/* :: Remove the trash bin
+rsync -av --delete dir1 dir2/ :: Synchronize the contents of dir1 to dir2, recursively.
+rsync -nv --delete dir1/ dir2/ :: Simulate an rsync of dir1 to dir2.
+rsync -v --delete dir1/ dir2/ :: Synchronize the contents of dir1 to dir2.
+/sbin/halt :: Halt the system
+/sbin/MAKEDEV ::  Script that creates all devices known.
+script -a file :: Record a shell script session to "file"
+sed '1, 10d' f :: (sed) Delete the first 10 lines of "f".
+sed '1!G;h;$!d' f :: (sed) Reverse the order of the lines in "f"
+sed '/^$/d' f :: (sed) Delete blank lines from "f"
+sed '$d' f :: (sed) Delete the last line of "f"
+sed '/^$/d' f | sed G :: (sed) Double-space "f" to only 1 space max.
+sed '/./,$!d' f :: (sed) Trim blank lines from beginning of "f".
+sed G f :: (sed) Double-space "f"
+sed -n '10,20p' src > dest :: Extract lines 10-20 from "src" and output to "dest"
+sed 'n;n;n;n;G;' f :: (sed) Add a blank line after every 5 lines
+sed 'N;$!P;$!D$d' f :: (sed) Delete the last 2 lines of "f"
+sed -n '$=' :: (sed) Count lines in "f"
+sed 's/blue/red/2' f :: (sed) Change 2nd instance of blue on each line to red in "f"
+sed 's/blue/red/' f :: (sed) Change first instance of blue on each line to red in "f"
+sed 's/blue/red/g' f :: (sed) Change all instances of blue to red in "f"
+sed 's/blue/xxx/g;s/red/xxx/g' f :: (sed) Change all "blue"s and "red"s to xxx in "f"
+sed 's/foo//g' f :: (sed) Delete all occurrences of foo from "f"
+sed 's/^/> /' f :: (sed) Add '> ' to the beginning of each line in "f"
+sed 's/^> //' f :: (sed) Remove '> ' from the beginning of each line in "f"
+service ssh restart :: Restart the ssh service.
+service ssh status :: Check the status of the ssh service
+service --status-all :: Check the status of all the services.
+#! :: "Shebang"
+shuf file :: Display the lines of "file" in random order. (not sort!)
+shutdown -Fr now :: Shutdown the computer now and force a filesystem check during reboot.
+shutdown -h +10 :: Shutdown the computer after 10 minutes
+shutdown -h now :: Shutdown the computer.
+shutdown -r now :: Reboot the computer
+sleep 5m && shutdown -h now :: Shutdown the computer after 5 minutes
+sleep 5s :: Sleep for 5 seconds.
+smb.conf :: The Samba server (file and print for Windows)
+socklist :: Display list of open sockets
+sort -b file :: Sort "file" and ignore leading blanks
+sort -c file :: Check if "file" is in sorted order.
+sort file :: Sort "file" alphabetically
+sort -M file :: Sort "file" by correct Month order.
+sort -o output input :: Sort file "input" and output to file "output"
+sort -R file :: Sort "file" using a random sort.
+sort -r file :: Sort "file" using reverse order
+sort -u file :: Sort "file" and remove duplicate lines.
+source /etc/bash.bashrc :: Re-source the bashrc file.
+ssh_config :: The SSH config file
+stat --printf "%a %n \n " :: Show permissions
+strace p :: Trace the system calls and signals of a program "p".
+strings file :: Print the strings of printable characters in "file".
+sudo dmidecode | head -40 :: Display pertinant BIOS info
+sudo fdisk -l :: List the partition tables for /proc/partitions.
+sudo hwclock :: View the current hardware date and time.
+sudo -i :: Become root in the current terminal
+sudo –k :: Make sudo forget your password
+sudo ufw enable:: Turn on the Uncomplicated Firewall
+sudo ufw show raw :: View all rules for the Uncomplicated Firewall
+sudo ufw status verbose :: View the status of the Uncomplicated Firewall
+sudo update-grub2 :: Update grub2
+sudo update-python-modules -av :: Rebuild all the Python modules
+sudo vim /etc/apt/sources.list :: Edit your repos
+sudo visudo :: Edit the sudoers config file.
+su :: Switch the root user account.
+su - :: Switch the root user account (preserve environment settings)
+syslog.conf :: The system log daemon (syslogd) config file
+tail -20 file :: Display the last 20 lines of "file"
+tail -50 /var/log/syslog :: View system logs
+tail file :: Display the last 10 lines of "file"
+tail --follow :: View a file as it updates
+tail -f /var/log/syslog :: View system log in real time.
+tail /var/log/messages :: View message logs
+tar cf zip files :: Create an uncompressed tar "zip" from "files"
+tar cjf zip files :: Create a bzip compressed tar "zip" from "files"
+tar cjvf zip files :: Create a bzip compressed tar "zip" from "files". See verbose.
+tar cvf zip files :: Create an uncompressed tar "zip" from "files", see verbose.
+tar czf zip files :: Create a gzip compressed tar "zip" from "files"
+tar czvf zip files :: Create a gzip compressed tar "zip" from "files". See verbose.
+tar rvf zip file :: Add a file/dir to an existing archive. See verbose.
+tar tvf test :: List the contents of a tar named test
+tar xf zip f :: Unzip most general compressed files as "f".
+tar xvf zip f :: Unzip most general compressed files as "f". See verbose.
+!^ :: The first argument of the last set of args given.
+!$ :: The last argument of the last set of args given.
+top :: Interactively view the system table of processes
+top -n 1 :: View the system table of processes once and exit.
+touch -a file :: Update the access time on "file".
+touch file :: Update the access and modification time on "file".
+touch -m file :: Update the modified time on "file"
+tr A-Z a-z < file:: Translate all letters in "file" to lowercase.
+tr a-z A-Z < file:: Translate all letters in "file" to uppercase.
+type cmd :: View what type of command "cmd" is and how the shell handles it.
+unalias -a :: Remove all aliases
+unalias x :: Remove an alias "x"
+uname -m :: Check your operating system architecture
+uname -r :: Check your current kernel.
+uniq -d file :: Select only the duplicate lines from "file" (required to be sorted)
+uniq file :: Select the unique lines from "file"(required to be sorted)
+uniq file :: Show unique lines from "file" with counts of duplicates(required to be sorted)
+unzip zip -d dir :: Unzip a "zip" to the specified "dir"
+unzip zip :: Unzip all files in "zip" to the current directory.
+uptime -p :: Show just the system uptime, human readable.
+uptime :: Show system's uptime, number of logged in users, load avg, and time.
+/usr/bin/curl -I -L test :: Grab the headers from a web page.
+/usr/share/zoneinfo :: Time zone data files directory.
+u :: User permissions
+$$ :: Value is the process ID of the shell.
+vmstat :: Report virtual memory statistics
+wc -c :: Count the bytes in a file
+wc -L :: Count the length of the longest line in a file.
+wc -l :: Count the lines in a file
+wc -m :: Count the characters in a file
+wc -w :: Count the words in a file
+w :: Find out who is logged onto the system and what each user is doing. 
+wget -b page :: Download webpage "page" in background.
+wget -c page :: Continue downloading a single webpage "page"
+wget --limit-rate=20K page :: Download webpage "page" and limit the download rate to 20K
+wget page :: Download a single webpage "page"
+wget -r -l 1 --convert-links page :: wget "page" and all its links, make it locally browesable.
+wget -r -l 1 page :: Download a website "page" recursively.
+wget -r page :: Download a website "page" recursively.
+wget -U Chrome :: Download a single webpage "page" as Chrome.
+wget --wait=20 page :: wget "page" and pause 20 seconds between retrievals.
+whatis cmd :: Get brief info on a cmd.
+whereis cmd :: Locate the binary, source, and manual page files for "cmd".
+which cmd :: Get path and file name of the executable "cmd". 
+whoami :: Display current userid.
+who -l :: Print system login processes
+who -q :: Quick list all login names and number of users logged on
+who -r :: Print current runlevel.
+xclip -o :: Retrieve the clipboard contents from xclip.
+xclip -selection o :: Paste from the X-clipboard
+xkill :: Kill a graphical app.
+!x :: Run last command with "x"
+xwininfo :: View all the info/statistics about an X window.
+yes :: Echo constant output stream of y and newlines.
+youtube-dl --extract-audio --audio-format mp3 test :: Get mp3 from youtube URL (named "test")
+zipinfo file :: List detailed information about a ZIP archive

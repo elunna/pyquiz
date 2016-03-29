@@ -1,0 +1,36 @@
+:%s/foo/bar/gc :: Replace all 'foo' with 'bar', with confirm prompts.
+:%s/foo/bar/gi :: Replace foo with bar on all lines, case insensitive
+:%s/foo/bar/g :: Replace foo with bar on all lines
+:%s/\<foo\>/bar/g :: Replace foo with bar on all lines, only whole words
+:s/foo/bar/g :: Replace foo with bar on current line only.
+:%s/\<foo\>//g :: Delete all instances of the whole word 'foo'
+:ls :: List buffers.
+:orgs :: List files.
+:messages :: View Vim messages
+:reg :: View register contents
+:jumps :: View Jump List
+:map :: View mappings
+:marks :: List all markings
+:%y+ :: Select all text
+:bn :: Switch buffer(where n is the buffer you want to switch to.)
+:new :: New window
+:split :: Split window.
+:vsplit file :: Open "file", in split window.
+:set :: Display all variables set
+:set all :: Display all possible variables and their current settings.
+:r file :: Insert file at line after cursor
+:!cmd :: Execute command "cmd"
+:w :: Save
+:w file :: Save to "file"
+:e file :: Edit "file"
+:wq :: Save and quit
+:q! :: Quit without saving
+:tab ball :: Puts all open files in tabs
+:help key :: Get help on a "key" command (or a combo of keys)
+vim +10 file :: Open "file" and goto line 10 with Vim
+vim /etc/hosts :: Open the hosts file (with Vim)
+vim file :: Open "file"(or create file) with Vim
+vim -r file :: Open "file" and recover from crash, with Vim
+vim -R file :: Open a file in read-only mode.
+vim +/term file :: Open "file" and search for "term" with Vim
+
