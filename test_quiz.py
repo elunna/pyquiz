@@ -32,8 +32,29 @@ class TestQuiz(unittest.TestCase):
         result = quiz.display_db(db)
         self.assertEqual(expected, result)
 
+    #########################################
+    # Tests for is_correct(db, term, guess):
+    #########################################
+    # Test if a question with a single answer.
+    def test_guess_1QA_correct_returnsTrue(self):
+        expected = True
+        db = quiz.import_db('tests/test_1answer.quiz')
+        key = 'What is the meaning of life?'
+        guess = '42'
+        result = quiz.is_correct(db, key, guess)
+        self.assertEqual(expected, result)
+
+    def test_guess_1QA_wrong_returnsFalse(self):
+        expected = False
+        db = quiz.import_db('tests/test_1answer.quiz')
+        key = 'What is the meaning of life?'
+        guess = '0'
+        result = quiz.is_correct(db, key, guess)
+        self.assertEqual(expected, result)
+
+    # Test if a question with multiple answers.
+
 """
-def guess(answer, question):
 def test_keys(user, test_dict):
 def test_values(test_dict):
 def is_valid_entry(termdef):
