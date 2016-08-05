@@ -23,10 +23,11 @@ import pickle
 import player
 
 
-def display_database(test_dict):
-    for k, v in test_dict.items():
-        print('{} --> {}'.format(k, v), end='')
-        print()
+def display_db(quiz):
+    _str = ''
+    for k, v in quiz.items():
+        _str += '{} --> {}\n'.format(k, v)
+    return _str
 
 
 def guess(answer, question):

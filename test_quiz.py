@@ -3,8 +3,9 @@ import quiz
 
 
 class TestQuiz(unittest.TestCase):
+    #########################################
     # Tests for import_db(filename):
-
+    #########################################
     # Test importing a single question/answer pair.
     def test_importdb_1QA(self):
         expected = {'What is the meaning of life?': '42'}
@@ -14,8 +15,17 @@ class TestQuiz(unittest.TestCase):
     # Test importing a question with multiple answers
     # Test importing a variety of question/answers
 
+    #########################################
+    # Tests for display_db(quiz):
+    #########################################
+    # Test displaying a single question/answer pair.
+    def test_displaydb_1QA(self):
+        expected = 'What is the meaning of life? --> 42\n'
+        db = quiz.import_db('tests/test_1answer.quiz')
+        result = quiz.display_db(db)
+        self.assertEqual(expected, result)
+
 """
-def display_database(test_dict):
 def guess(answer, question):
 def test_keys(user, test_dict):
 def test_values(test_dict):
