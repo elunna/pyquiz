@@ -14,6 +14,12 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Test importing a question with multiple answers
+    def test_importdb_7QA(self):
+        expected = {'Colors in the rainbow?':
+                    ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']}
+        result = quiz.import_db('tests/test_7answers.quiz')
+        self.assertEqual(expected, result)
+
     # Test importing a variety of question/answers
 
     #########################################
