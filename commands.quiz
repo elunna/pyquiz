@@ -63,6 +63,7 @@ cat file | xclip -selection c :: Copy "file" to xclip clipboard
 cat -n file :: Display contents of "file" with line numbers
 cat /proc/sys/vm/swappiness :: Shows the swappiness setting.
 cat x >> file :: Append contents of "x" to "file"
+cat /etc/issue :: Display the current linux distribution
 cd - :: Go back to last used directory
 cd ~ :: Go to the home directory.
 cd -P link :: Follow a symlink (supposedly)
