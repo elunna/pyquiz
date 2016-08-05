@@ -95,8 +95,9 @@ def import_db(filename):
     """
     # The standard quiz file delimiter is '::'
     delimiter = '::'
+    path = 'quiz/'
     try:
-        quizfile = open(filename)
+        quizfile = open(path + filename)
     except:
         print("Something is wrong with the filename. Exiting!")
         exit()
@@ -151,8 +152,7 @@ def choose_quiz():
         print('\t{}\t{}'.format(i, quiz))
 
     while True:
-        print('Enter the file you want to work with:')
-        print()
+        print('\nPlease select the file number to work with:')
         menunum = input('> ')
         try:
             menunum = int(menunum)
@@ -171,18 +171,17 @@ def process_user():
     """
     name = input('Please enter your name adventurous one > ')
     userfile = str(name) + '.dat'
-
+    print('\n')
     # check if they have a file
     try:
         with open(userfile, 'rb') as f:
-            print('This user has a file that exists')
-            print('Loading the players info...')
+            print('Loading the player file...')
             user = pickle.load(f)
             return user
 
     except IOError:
-        print("This user doesn't seem to have an account.")
-        print('You are starting a new game eh? Well good luck!')
+        print('This user doesn\'t seem to have an account...')
+        print('Creating a new player file.')
         return player.Player(name)
 
 
@@ -201,7 +200,7 @@ def save_user(user):
     Saves the players current stats to file.
     """
     userfile = user.name + '.dat'
-    print('Saving your data to file')
+    print('Saving player file... ')
 
     try:
         with open(userfile, 'wb') as f:
@@ -216,21 +215,14 @@ def main():
     print("Welcome to Erik's Python Quizinator!")
 
     user = process_user()
-    display_user(user)
-
     quiz = choose_quiz()
-
-    print('You chose the {} file!.'.format(quiz))
     cmds = import_db(quiz)
-
-    # display_database(cmds)
 
     print('Beginning the quiz!!!\n\n')
     qty = 10
     testset = make_test_set(cmds, qty)
 
     test_keys(user, testset)
-    # os.system('clear')
 
     save_user(user)
 
