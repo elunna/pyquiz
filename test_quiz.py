@@ -21,6 +21,11 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Import ignores a blank line
+    def test_importdb_dupes_blanklines_noEmptyKeys(self):
+        expected = False
+        db = quiz.import_db('tests/test_dupes.quiz')
+        result = '' in db.keys()
+        self.assertEqual(expected, result)
 
     # Importing an entry on separate lines adds to the dictionary
     def test_importdb_dupes_2answers_difflines_returnsbothvalues(self):
