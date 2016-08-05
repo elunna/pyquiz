@@ -35,6 +35,11 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Importing a duplicate question, with an existing answer, does nothing.
+    def test_importdb_dupes_duplicateentry_answerremainsthesame(self):
+        expected = ['4']
+        db = quiz.import_db('tests/test_dupes.quiz')
+        result = db.get('2 + 2')
+        self.assertEqual(expected, result)
 
     # Test importing a variety of question/answers
 
