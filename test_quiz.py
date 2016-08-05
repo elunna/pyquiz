@@ -1,10 +1,16 @@
 import unittest
 import quiz
 
-class TestQuiz(Unittest.testcase):
-    # Tests for import_database(db_file):
+
+class TestQuiz(unittest.TestCase):
+    # Tests for import_db(filename):
 
     # Test importing a single question/answer pair.
+    def test_importdb_1QA(self):
+        expected = {'What is the meaning of life?': '42'}
+        result = quiz.import_db('tests/test_1answer.quiz')
+        self.assertEqual(expected, result)
+
     # Test importing a question with multiple answers
     # Test importing a variety of question/answers
 
