@@ -103,13 +103,12 @@ def import_db(filename):
 
     db = {}
     for line in quizfile.readlines():
-        terms = line.split(delimiter)
-
         # Strip the blank spaces from the ends of all terms.
-        question = terms[0].strip()
+        terms = [t.strip() for t in line.split(delimiter)]
+
+        question, answers = terms[0], terms[1:]
         if question == '':
             continue
-        answers = [t.strip() for t in terms[1:]]
 
         # Allow questions to have multiple answers on multiple lines in the quiz file.
         if question in db:
