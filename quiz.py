@@ -32,7 +32,8 @@ def display_db(quiz):
 
 
 def is_correct(db, term, guess):
-    if guess in db[term]:
+    # Make sure that case does not matter. Check all as lowercase.
+    if guess.lower() in [a.lower() for a in db[term]]:
         return True
     else:
         return False
