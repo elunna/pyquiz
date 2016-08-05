@@ -53,6 +53,30 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Test if a question with multiple answers.
+    def test_guess_7QA_correctlowercase_returnsTrue(self):
+        expected = True
+        db = quiz.import_db('tests/test_7answers.quiz')
+        key = 'Colors in the rainbow?'
+        guess = 'red'
+        result = quiz.is_correct(db, key, guess)
+        self.assertEqual(expected, result)
+
+    def test_guess_7QA_correctuppercase_returnsTrue(self):
+        expected = True
+        db = quiz.import_db('tests/test_7answers.quiz')
+        key = 'Colors in the rainbow?'
+        guess = 'BLUE'
+        result = quiz.is_correct(db, key, guess)
+        self.assertEqual(expected, result)
+
+    def test_guess_7QA_wrong_returnsFalse(self):
+        expected = False
+        db = quiz.import_db('tests/test_7answers.quiz')
+        key = 'Colors in the rainbow?'
+        guess = 'Chrome'
+        result = quiz.is_correct(db, key, guess)
+        self.assertEqual(expected, result)
+
 
 """
 def test_keys(user, test_dict):
