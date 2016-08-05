@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """
-Spanish dictionary language tester
+Term and definition flashcard tester.
 
-*** Rules of the database ***
--- The basic format is "TERM:DEFINITION"
--- Neither the TERM not the DEFINITION can be empty
--- The TERM can contain numbers or be a number.
--- The DEFINITION cannot contain numbers or non-english special characters.
--- Acceptable DEFINITION characters: ' -
+This program works with text files of term/definitions and is able to import them and present
+the player with different sets of quizzes, analyze their answers, and provide useful reports.
+
+Text files of ANSWER/QUESTION pairs are imported and converted to dictionaries. The dictionary
+keys are the answer
+
+The text files have data stored as "ANSWER :: QUESTION"
+-- Neither the ANSWER not the QUESTION can be empty
+-- The ANSWER can contain numbers or be a number.
+-- The QUESTION cannot contain numbers or non-english special characters.
+-- Notice that a the data files can contain more than one QUESTION for an ANSWER, so that we can
+take multiple answers. To accomodate multiple answers, whe
 
 """
 from __future__ import print_function
@@ -24,8 +30,10 @@ def display_database(test_dict):
 
 
 def guess(answer, question):
-    """ Print the question (or relative definition, etc) and lets the user have
-    3 guesses to get the correct term.  """
+    """
+    Print the question (or relative definition, etc) and lets the user have 3 guesses to get the
+    correct term.
+    """
     print('-'*20)
     attempts = 0
     while attempts < 3:
@@ -71,9 +79,9 @@ def is_valid_entry(termdef):
 
 
 def import_database(db_file):
-    """ Takes a filename argument that refers to the text file to read the
-    database from. It then parses through and creates a dictionary of terms     and
-    definitions and when complete returns the dictionary.
+    """
+    Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
+    ANSWERS, where ANSWERS is a list of possible strings that are acceptable.
     """
     try:
         wordfile = open(db_file)
@@ -98,8 +106,7 @@ def import_database(db_file):
 
 def make_test_set(db, quantity):
     """
-    Takes the(presumably large) database and extracts the specified number
-    of term/def pairs.
+    Takes the(presumably large) database and extracts the specified number of term/def pairs.
     """
     keylist = list(db.keys())
     random.shuffle(keylist)
@@ -114,7 +121,9 @@ def make_test_set(db, quantity):
 
 
 def choose_quiz():
-    # List all the .quiz files
+    """
+    List all the .quiz files
+    """
     print()
     print("The available topics are...")
     quizlist = [f for f in os.listdir('.') if os.path.isfile(f) and str(f).endswith('.quiz')]
@@ -136,6 +145,10 @@ def choose_quiz():
 
 
 def process_user():
+    """
+    Gets the username, checks for any previous player info and loads the player. If no player
+    file it creates a new one. Returns a Player object.
+    """
     name = input('Please enter your name adventurous one > ')
     userfile = str(name) + '.dat'
 
@@ -151,20 +164,12 @@ def process_user():
         print("This user doesn't seem to have an account.")
         print('You are starting a new game eh? Well good luck!')
         return player.Player(name)
-    """
-    if os.path.exists(userfile):
-        # if they do, retrive it and show their stats
-        print('This user has a file that exists')
-        f = open(userfile, 'rb')
-        return pickle.load(f)
-    else:
-        # If not, create a new player.
-        print('You are starting a new game eh? Well good luck!')
-        return Player(name)
-    """
 
 
 def display_user(user):
+    """
+    Displays the player's information
+    """
     print('Type of user is {}'.format(type(user)))
     print('user is {}'.format(user.name))
     print('score is {}'.format(user.solved))
@@ -172,6 +177,9 @@ def display_user(user):
 
 
 def save_user(user):
+    """
+    Saves the players current stats to file.
+    """
     userfile = user.name + '.dat'
     print('Saving your data to file')
 
