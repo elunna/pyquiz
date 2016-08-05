@@ -7,8 +7,9 @@ class TestQuiz(unittest.TestCase):
     # Tests for import_db(filename):
     #########################################
     # Test importing a single question/answer pair.
+    # The answer should be in a list.
     def test_importdb_1QA(self):
-        expected = {'What is the meaning of life?': '42'}
+        expected = {'What is the meaning of life?': ['42']}
         result = quiz.import_db('tests/test_1answer.quiz')
         self.assertEqual(expected, result)
 

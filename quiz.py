@@ -26,7 +26,8 @@ import player
 def display_db(quiz):
     _str = ''
     for k, v in quiz.items():
-        _str += '{} --> {}\n'.format(k, v)
+        for item in v:
+            _str += '{} --> {}\n'.format(k, item)
     return _str
 
 
@@ -93,10 +94,9 @@ def import_db(filename):
     db = {}
     skippedlines = 0
     for line in wordfile.readlines():
-
         words = line.split('::')
         if is_valid_entry(words):
-            db[words[0].strip()] = words[1].strip()
+            db[words[0].strip()] = [words[1].strip()]
         else:
             pass
             # print('There is something wrong with the line, skipping...')
