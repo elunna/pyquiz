@@ -14,13 +14,7 @@ from __future__ import print_function
 import random
 import os
 import pickle
-
-
-class Player():
-    def __init__(self, name):
-        self.name = name
-        self.solved = 0
-        self.guesses = 0
+import player
 
 
 def display_database(test_dict):
@@ -156,7 +150,7 @@ def process_user():
     except IOError:
         print("This user doesn't seem to have an account.")
         print('You are starting a new game eh? Well good luck!')
-        return Player(name)
+        return player.Player(name)
     """
     if os.path.exists(userfile):
         # if they do, retrive it and show their stats
