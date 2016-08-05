@@ -20,6 +20,17 @@ class TestQuiz(unittest.TestCase):
         result = quiz.import_db('tests/test_7answers.quiz')
         self.assertEqual(expected, result)
 
+    # Import ignores a blank line
+
+    # Importing an entry on separate lines adds to the dictionary
+    def test_importdb_dupes_2answers_difflines_returnsbothvalues(self):
+        expected = ['grey', 'gray']
+        db = quiz.import_db('tests/test_dupes.quiz')
+        result = db.get('White plus black?')
+        self.assertEqual(expected, result)
+
+    # Importing a duplicate question, with an existing answer, does nothing.
+
     # Test importing a variety of question/answers
 
     #########################################
