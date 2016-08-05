@@ -146,7 +146,7 @@ def choose_quiz():
     """
     print()
     print("The available topics are...")
-    quizlist = [f for f in os.listdir('.') if os.path.isfile(f) and str(f).endswith('.quiz')]
+    quizlist = [f for f in os.listdir('./quiz') if str(f).endswith('.quiz')]
     for i, quiz in enumerate(quizlist):
         print('\t{}\t{}'.format(i, quiz))
 
