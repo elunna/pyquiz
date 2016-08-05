@@ -78,30 +78,30 @@ def is_valid_entry(termdef):
     return True  # It passed all the tests
 
 
-def import_database(db_file):
+def import_db(filename):
     """
     Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
     ANSWERS, where ANSWERS is a list of possible strings that are acceptable.
     """
     try:
-        wordfile = open(db_file)
+        wordfile = open(filename)
     except:
         print("Something is wrong with the filename. Exiting!")
         exit()
 
-    new_database = {}
+    db = {}
     skippedlines = 0
     for line in wordfile.readlines():
 
         words = line.split('::')
         if is_valid_entry(words):
-            new_database[words[0].strip()] = words[1].strip()
+            db[words[0].strip()] = words[1].strip()
         else:
             pass
             # print('There is something wrong with the line, skipping...')
             skippedlines += 1
     print('Skipped {} lines while importing the database.'.format(skippedlines))
-    return new_database
+    return db
 
 
 def make_test_set(db, quantity):
@@ -201,7 +201,7 @@ def main():
     quiz = choose_quiz()
 
     print('You chose the {} file!.'.format(quiz))
-    cmds = import_database(quiz)
+    cmds = import_db(quiz)
 
     # display_database(cmds)
 
