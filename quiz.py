@@ -93,6 +93,8 @@ def import_db(filename):
     Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
     ANSWERS, where ANSWERS is a list of possible strings that are acceptable.
     """
+    # The standard quiz file delimiter is '::'
+    delimiter = '::'
     try:
         wordfile = open(filename)
     except:
@@ -101,7 +103,7 @@ def import_db(filename):
 
     db = {}
     for line in wordfile.readlines():
-        words = line.split('::')
+        words = line.split(delimiter)
         question = words[0].strip()
         db[question] = [answer.strip() for answer in words[1:]]
     return db
