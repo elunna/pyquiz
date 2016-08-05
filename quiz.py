@@ -96,16 +96,30 @@ def import_db(filename):
     # The standard quiz file delimiter is '::'
     delimiter = '::'
     try:
-        wordfile = open(filename)
+        quizfile = open(filename)
     except:
         print("Something is wrong with the filename. Exiting!")
         exit()
 
     db = {}
-    for line in wordfile.readlines():
-        words = line.split(delimiter)
-        question = words[0].strip()
-        db[question] = [answer.strip() for answer in words[1:]]
+    for line in quizfile.readlines():
+        #  if line == '':
+            #  continue
+        terms = line.split(delimiter)
+
+        # Strip the blank spaces from the ends of all terms.
+        question = terms[0].strip()
+        answers = [t.strip() for t in terms[1:]]
+
+        # Allow questions to have multiple answers on multiple lines in the quiz file.
+        if question in db:
+            for a in answers:
+                if a in db[question]:
+                    pass
+                else:
+                    db[question].append(a)
+        else:
+            db[question] = answers
     return db
 
 
