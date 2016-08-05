@@ -42,6 +42,14 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Test importing a variety of question/answers
+    # A blank question(the first term) is ignored:
+    def test_importdb_dupes_blankquestion_ignored(self):
+        # this dictionary should have 3 normal entries
+        expected = 3
+        db = quiz.import_db('tests/test_errors.quiz')
+        result = len(db)
+        self.assertEqual(expected, result)
+
 
     #########################################
     # Tests for display_db(quiz):

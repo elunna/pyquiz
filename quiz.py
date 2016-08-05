@@ -105,9 +105,11 @@ def import_db(filename):
     for line in quizfile.readlines():
         # Strip the blank spaces from the ends of all terms.
         terms = [t.strip() for t in line.split(delimiter)]
+        question = terms[0]
+        answers = [t for t in terms[1:] if t != '']
 
-        question, answers = terms[0], terms[1:]
-        if question == '':
+        # Ignore empty questions or answers.
+        if question == '' or len(answers) < 1:
             continue
 
         # Allow questions to have multiple answers on multiple lines in the quiz file.
