@@ -92,16 +92,10 @@ def import_db(filename):
         exit()
 
     db = {}
-    skippedlines = 0
     for line in wordfile.readlines():
         words = line.split('::')
-        if is_valid_entry(words):
-            db[words[0].strip()] = [words[1].strip()]
-        else:
-            pass
-            # print('There is something wrong with the line, skipping...')
-            skippedlines += 1
-    print('Skipped {} lines while importing the database.'.format(skippedlines))
+        question = words[0].strip()
+        db[question] = [answer.strip() for answer in words[1:]]
     return db
 
 
