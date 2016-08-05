@@ -31,6 +31,13 @@ def display_db(quiz):
     return _str
 
 
+def is_correct(db, term, guess):
+    if guess in db[term]:
+        return True
+    else:
+        return False
+
+
 def guess(answer, question):
     """
     Print the question (or relative definition, etc) and lets the user have 3 guesses to get the
