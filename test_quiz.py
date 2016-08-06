@@ -50,7 +50,6 @@ class TestQuiz(unittest.TestCase):
         result = len(db)
         self.assertEqual(expected, result)
 
-
     #########################################
     # Tests for display_db(quiz):
     #########################################
@@ -62,55 +61,47 @@ class TestQuiz(unittest.TestCase):
         self.assertEqual(expected, result)
 
     #########################################
-    # Tests for is_correct(db, term, guess):
+    # Tests for is_correct(answers, guess):
     #########################################
     # Test if a question with a single answer.
-    def test_guess_1QA_correct_returnsTrue(self):
+    def test_iscorrect_1QA_correct_returnsTrue(self):
         expected = True
         db = quiz.import_db('tests/test_1answer.quiz')
         key = 'What is the meaning of life?'
-        guess = '42'
-        result = quiz.is_correct(db, key, guess)
+        result = quiz.is_correct(db[key], '42')
         self.assertEqual(expected, result)
 
-    def test_guess_1QA_wrong_returnsFalse(self):
+    def test_iscorrect_1QA_wrong_returnsFalse(self):
         expected = False
         db = quiz.import_db('tests/test_1answer.quiz')
         key = 'What is the meaning of life?'
-        guess = '0'
-        result = quiz.is_correct(db, key, guess)
+        result = quiz.is_correct(db[key], '0')
         self.assertEqual(expected, result)
 
     # Test if a question with multiple answers.
-    def test_guess_7QA_correctlowercase_returnsTrue(self):
+    def test_iscorrect_7QA_correctlowercase_returnsTrue(self):
         expected = True
         db = quiz.import_db('tests/test_7answers.quiz')
         key = 'Colors in the rainbow?'
-        guess = 'red'
-        result = quiz.is_correct(db, key, guess)
+        result = quiz.is_correct(db[key], 'red')
         self.assertEqual(expected, result)
 
-    def test_guess_7QA_correctuppercase_returnsTrue(self):
+    def test_iscorrect_7QA_correctuppercase_returnsTrue(self):
         expected = True
         db = quiz.import_db('tests/test_7answers.quiz')
         key = 'Colors in the rainbow?'
-        guess = 'BLUE'
-        result = quiz.is_correct(db, key, guess)
+        result = quiz.is_correct(db[key], 'BLUE')
         self.assertEqual(expected, result)
 
-    def test_guess_7QA_wrong_returnsFalse(self):
+    def test_iscorrect_7QA_wrong_returnsFalse(self):
         expected = False
         db = quiz.import_db('tests/test_7answers.quiz')
         key = 'Colors in the rainbow?'
-        guess = 'Chrome'
-        result = quiz.is_correct(db, key, guess)
+        result = quiz.is_correct(db[key], 'Chrome')
         self.assertEqual(expected, result)
 
 
 """
-def test_keys(user, test_dict):
-def test_values(test_dict):
-def is_valid_entry(termdef):
 def make_test_set(db, quantity):
 def choose_quiz():
 def process_user():

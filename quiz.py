@@ -31,9 +31,9 @@ def display_db(quiz):
     return _str
 
 
-def is_correct(db, term, guess):
+def is_correct(answers, guess):
     # Make sure that case does not matter. Check all as lowercase.
-    if guess.lower() in [a.lower() for a in db[term]]:
+    if guess.lower() in [a.lower() for a in answers]:
         return True
     else:
         return False
@@ -50,7 +50,8 @@ def guess(answer, question):
         guess = input('> ')
         attempts += 1
 
-        if guess.lower() == answer.lower():
+        #  if guess.lower() == answer.lower():
+        if is_correct(answer, guess):
             print('Correct!\n')
             return attempts
         else:
@@ -89,9 +90,8 @@ def import_db(filename):
     """
     # The standard quiz file delimiter is '::'
     delimiter = '::'
-    path = 'quiz/'
     try:
-        quizfile = open(path + filename)
+        quizfile = open(filename)
     except:
         print("Something is wrong with the filename. Exiting!")
         exit()
