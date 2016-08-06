@@ -72,12 +72,6 @@ def test_keys(user, test_dict):
             user.guesses += 3
 
 
-def test_values(test_dict):
-    for k, v in test_dict.items():
-        print('{}?'.format(k))
-        guess(v, k)
-
-
 def is_valid_entry(termdef):
     if len(termdef) != 2:
         return False
@@ -222,7 +216,6 @@ def main():
     testset = make_test_set(cmds, qty)
 
     test_keys(user, testset)
-
     save_user(user)
 
 
