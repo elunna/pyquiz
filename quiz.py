@@ -134,9 +134,11 @@ def choose_quiz():
     """
     List all the .quiz files
     """
+    filepath = './quiz/'
     print()
     print("The available topics are...")
-    quizlist = [f for f in os.listdir('./quiz') if str(f).endswith('.quiz')]
+    quizlist = [f for f in os.listdir(filepath) if str(f).endswith('.quiz')]
+
     for i, quiz in enumerate(quizlist):
         print('\t{}\t{}'.format(i, quiz))
 
@@ -146,7 +148,7 @@ def choose_quiz():
         try:
             menunum = int(menunum)
             if menunum in range(len(quizlist)):
-                return quizlist[menunum]
+                return filepath + quizlist[menunum]
             else:
                 print('Not a value menu option! Try again.')
         except ValueError:
