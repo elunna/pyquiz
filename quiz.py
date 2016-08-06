@@ -189,10 +189,9 @@ def display_user(user):
     """
     Displays the player's information
     """
-    print('Type of user is {}'.format(type(user)))
-    print('user is {}'.format(user.name))
-    print('score is {}'.format(user.solved))
-    print('guesses is {}'.format(user.guesses))
+    print('Showing data for {}'.format(user.name))
+    print('Score: {}'.format(user.solved))
+    print('Guesses: {}'.format(user.guesses))
 
 
 def save_user(user):
