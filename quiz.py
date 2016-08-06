@@ -39,7 +39,7 @@ def is_correct(answers, guess):
         return False
 
 
-def guess(answer, question):
+def guess(question, answer):
     """
     Print the question (or relative definition, etc) and lets the user have 3 guesses to get the
     correct term.
@@ -62,10 +62,10 @@ def guess(answer, question):
     return -1
 
 
-def test_keys(user, test_dict):
-    for k, v in test_dict.items():
-        print('{}'.format(v))
-        result = guess(k, v)
+def test(user, quiz):
+    for question, answer in quiz.items():
+        print('{}'.format(question))
+        result = guess(question, answer)
         if result > 0:
             user.solved += 1
             user.guesses += result
@@ -205,14 +205,14 @@ def main():
     print("Welcome to Erik's Python Quizinator!")
 
     user = process_user()
-    quiz = choose_quiz()
-    cmds = import_db(quiz)
+    filename = choose_quiz()
+    quiz = import_db(filename)
 
     print('Beginning the quiz!!!\n\n')
-    qty = 10
-    testset = make_test_set(cmds, qty)
+    #  qty = 10
+    #  testset = make_test_set(cmds, qty)
 
-    test_keys(user, testset)
+    test(user, quiz)
     save_user(user)
 
 
