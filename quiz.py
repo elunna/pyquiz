@@ -73,16 +73,6 @@ def test(user, quiz):
             user.guesses += 3
 
 
-def is_valid_entry(termdef):
-    if len(termdef) != 2:
-        return False
-
-    if len(termdef[0]) == 0 or len(termdef[1]) == 0:
-        return False
-
-    return True  # It passed all the tests
-
-
 def import_db(filename):
     """
     Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
