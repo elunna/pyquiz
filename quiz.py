@@ -50,7 +50,6 @@ def guess(question, answer):
         guess = input('> ')
         attempts += 1
 
-        #  if guess.lower() == answer.lower():
         if is_correct(answer, guess):
             print('Correct!\n')
             return attempts
@@ -58,7 +57,6 @@ def guess(question, answer):
             print('Wrong!\n')
 
     print('The correct answer is: {}'.format(answer))
-    #  print('We\'ll try the next question...\n')
     return -1
 
 
@@ -199,8 +197,6 @@ def main():
     quiz = import_db(filename)
 
     print('Beginning the quiz!!!\n\n')
-    #  qty = 10
-    #  testset = make_test_set(cmds, qty)
 
     test(user, quiz)
     save_user(user)
@@ -211,7 +207,6 @@ if __name__ == "__main__":
 
 
 # MIT License
-
 # Copyright (c) [2016] [Erik S. Lunna]
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
