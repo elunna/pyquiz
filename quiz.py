@@ -21,6 +21,8 @@ import random
 import os
 import pickle
 import player
+import abbrev
+import re
 
 
 def display_db(quiz):
@@ -29,6 +31,17 @@ def display_db(quiz):
         for item in v:
             _str += '{} --> {}\n'.format(k, item)
     return _str
+
+
+def abbreviate(answer):
+    short_ans = answer[:]
+    for k, v in abbrev.abbreviations.items():
+        short_ans = re.sub(k, v, short_ans)
+
+    if answer == short_ans:
+        return None
+    else:
+        return short_ans
 
 
 def is_correct(answers, guess):
