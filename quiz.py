@@ -36,9 +36,9 @@ def display_db(quiz):
 def abbreviate(answer):
     short_ans = answer[:]
     for k, v in abbrev.abbreviations.items():
-        short_ans = re.sub(k, v, short_ans)
+        short_ans = re.sub(k, v, short_ans.lower())
 
-    if answer == short_ans:
+    if answer.lower() == short_ans:
         return None
     else:
         return short_ans
@@ -112,6 +112,14 @@ def import_db(filename):
                         db[question].append(a)
             else:
                 db[question] = answers
+
+            # Add abbreviated versions of answers
+            for ans in db[question]:
+                abb = abbreviate(ans)
+                if abb is None:
+                    pass
+                else:
+                    db[question].append(abb)
     return db
 
 
