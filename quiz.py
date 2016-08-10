@@ -57,7 +57,6 @@ def guess(question, answer):
     Print the question (or relative definition, etc) and lets the user have 3 guesses to get the
     correct term.
     """
-    print('-'*20)
     attempts = 0
     while attempts < 3:
         guess = input('> ')
@@ -74,14 +73,22 @@ def guess(question, answer):
 
 
 def test(user, quiz):
+    failed = {}
+    guesses = 0
+
     for question, answer in quiz.items():
+        print('-'*40 + '-')
         print('{}'.format(question))
         result = guess(question, answer)
         if result > 0:
             user.solved += 1
             user.guesses += result
+            guesses += result
         else:
+            failed[question] = answer
             user.guesses += 3
+            guesses += 3
+    return failed, guesses
 
 
 def import_db(filename):
@@ -217,9 +224,29 @@ def main():
     filename = choose_quiz()
     quiz = import_db(filename)
 
+    print('This quiz has {} questions...'.format(len(quiz)))
     print('Beginning the quiz!!!\n\n')
 
-    test(user, quiz)
+    failed, guesses = test(user, quiz)
+    solved = len(quiz) - len(failed)
+    accuracy = round((solved / guesses) * 100, 2)
+    #  accuracy = (solved / guesses) * 100
+    # SUMMARY
+    print('#'*80)
+    print('='*80)
+    print('Showing your stats...')
+    print('-'*80)
+    print(filename)
+    print('Questions: {}'.format(len(quiz)))
+    print('Solved: {}'.format(solved))
+    print('Failed: {}'.format(len(failed)))
+    print('Guesses: {}'.format(guesses))
+    print('Accuracy: {}%'.format(accuracy))
+    print()
+    print('You got these incorrect:')
+    for k, v in failed.items():
+        print('Q:{} --> A: {}'.format(k, v))
+
     save_user(user)
 
 
