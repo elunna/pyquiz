@@ -43,9 +43,8 @@ class Quiz():
         Retrieve the next question in the randomly generated quiz. Only get the next question if
         we have not completed the current question.
         """
-        if self.counter >= self.qty:
+        if self.counter >= self.qty - 1:
             raise StopIteration()
-            return None
         elif self.move_on:
             self.counter += 1
             self.move_on = False
@@ -135,13 +134,13 @@ class Quiz():
         if guess.lower() in [a.lower() for a in self.answers()]:
             self.solved += 1
             self.reset_attempts()
-            return True
+            return "CORRECT!"
         elif self.attempts == MAX_GUESSES:
             self.failed[self.question()] = self.answers()
             self.reset_attempts()
-            return False
+            return self.answers()
         else:
-            return False
+            return "WRONG!"
 
     def import_db(self, filename):
         """

@@ -29,13 +29,10 @@ def test(q):
     """
     for question in q:
         print('-'*40 + '-')
-        print('{}'.format(question))
+        print('#{}: {}'.format(q.counter + 1, question))
         guess = input('> ')
 
-        if q.check_guess(guess):
-            print('Correct!\n')
-        else:
-            print('Wrong!\n')
+        print(q.check_guess(guess))
 
 
 def choose_quiz():
