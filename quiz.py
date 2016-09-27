@@ -1,194 +1,122 @@
-#!/usr/bin/env python3
-"""
-Term and definition flashcard tester.
-
-This program works with flat text files of term/definitions and is able to import them and
-present the player with different sets of quizzes, analyze their answers, and provide useful
-reports.
-
-Text files of ANSWER/QUESTION pairs are imported and converted to dictionaries. The dictionary
-keys are the answer
-
-The text files have data stored as "ANSWER :: QUESTION"
--- Neither the ANSWER not the QUESTION can be empty
--- The ANSWER can contain numbers or be a number.
--- The QUESTION cannot contain numbers or non-english special characters.
--- Notice that a the data files can contain more than one QUESTION for an ANSWER, so that we can
-take multiple answers. To accomodate multiple answers, whe
-"""
-
-from __future__ import print_function
-import os
-import player
 import random
 
-
-def display_db(quiz):
-    """
-    Show all questions and answers in the quiz.
-    """
-    _str = ''
-    for k, v in quiz.items():
-        for item in v:
-            _str += '{} --> {}\n'.format(k, item)
-    return _str
+MAX_GUESSES = 3
 
 
-def check_guess(answers, guess):
-    """
-    Checks the user guess against the valid answers. Returns True if the answer matches a valid
-    answer.
-    """
-    # Make sure that case does not matter. Check all as lowercase.
-    if guess.lower() in [a.lower() for a in answers]:
-        return True
-    else:
-        return False
-
-
-def guess(question, answer):
-    """
-    Print the question (or relative definition, etc) and lets the user have 3 guesses to get the
-    correct term.
-    """
-    attempts = 0
-    while attempts < 3:
-        guess = input('> ')
-        attempts += 1
-
-        if check_guess(answer, guess):
-            print('Correct!\n')
-            return attempts
+class Quiz():
+    def __init__(self, filename=None, qty=10):
+        if filename:
+            self.quiz = self.import_db(filename)
         else:
-            print('Wrong!\n')
+            raise ValueError('Need a filename to import the quiz database!')
 
-    print('The correct answer is: {}'.format(answer))
-    return -1
+        self.name = filename
+        self.solved = 0
+        self.guesses = 0
+        self.attempts = 0  # Guess attempts on the current question
+        self.failed = {}
 
-
-def test(user, quiz):
-    """
-    Execute a test of the quiz to the user.
-    """
-    failed = {}
-    guesses = 0
-
-    for question, answer in quiz.items():
-        print('-'*40 + '-')
-        print('{}'.format(question))
-        result = guess(question, answer)
-        if result > 0:
-            user.solved += 1
-            user.guesses += result
-            guesses += result
+        if qty > len(self.quiz):
+            self.qty = len(self.quiz)
         else:
-            failed[question] = answer
-            user.guesses += 3
-            guesses += 3
-    return failed, guesses
+            self.qty = qty
 
+        self.move_on = False  # Flag for moving on from the current question
+        self.counter = 0
 
-def import_db(filename):
-    """
-    Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
-    ANSWERS, where ANSWERS is a list of possible strings that are acceptable.
-    """
-    # The standard quiz file delimiter is '::'
-    delimiter = '::'
-    db = {}
-    with open(filename) as quizfile:
-        for line in quizfile.readlines():
-            # Strip the blank spaces from the ends of all terms.
-            terms = [t.strip() for t in line.split(delimiter)]
-            question = terms[0]
-            answers = [t for t in terms[1:] if t != '']
+        questions = list(self.quiz.keys())
+        random.shuffle(questions)
+        self.test = questions[0:self.qty]
 
-            # Ignore empty questions or answers.
-            if question == '' or len(answers) < 1:
-                continue
+    def __len__(self):
+        return len(self.quiz)
 
-            # Allow questions to have multiple answers on multiple lines in the quiz file.
-            if question in db:
-                for a in answers:
-                    if a in db[question]:
-                        pass
-                    else:
-                        db[question].append(a)
-            else:
+    def __next__(self):
+        if self.counter >= self.qty:
+            raise StopIteration()
+        elif self.move_on:
+            self.counter += 1
+            self.move_on = False
+
+        return self.question()
+
+    def __iter__(self):
+        return self
+
+    def __str__(self):
+        print('Game in progress? {}'.format(self.move_on))
+        print('Questions: {}'.format(len(self)))
+        print('Solved: {}'.format(self.solved))
+        print('Failed: {}'.format(len(self.failed)))
+        print('Guesses: {}'.format(self.guesses))
+        print('Accuracy: {}%'.format(self.accuracy()))
+
+    def accuracy(self):
+        return round((self.solved / self.guesses) * 100, 2)
+
+    def show(self):
+        """
+        Show all questions and answers in the quiz.
+        """
+        return self.print_db(self.quiz)
+
+    def show_failed(self):
+        return self.print_db(self.failed)
+
+    def print_db(self, db):
+        _str = ''
+        for k, v in db:
+            for item in v:
+                _str += '{} --> {}\n'.format(k, item)
+        return _str
+
+    def question(self):
+        return self.test[self.counter]
+
+    def answers(self):
+        return self.quiz[self.test[self.counter]]
+
+    def reset_attempts(self):
+        self.guesses += self.attempts
+        self.attempts = 0
+        self.move_on = True
+
+    def check_guess(self, guess):
+        """
+        Checks the user guess against the valid answers. Returns True if the answer matches a valid
+        answer.
+        """
+        # Make sure that case does not matter. Check all as lowercase.
+        self.attempts += 1
+
+        if guess.lower() in [a.lower() for a in self.answers()]:
+            self.solved += 1
+            self.reset_attempts()
+            return True
+        elif self.attempts == MAX_GUESSES:
+            self.failed[self.question()] = self.answers()
+            self.reset_attempts()
+            return False
+        else:
+            return False
+
+    def import_db(self, filename):
+        """
+        Parses through the db_file(which is a text file) and creates a dictionary of QUESTIONS and
+        ANSWERS, where ANSWERS is a list of possible strings that are acceptable.
+        """
+        DELIMITER = '::'
+        db = {}
+        with open(filename) as quizfile:
+            for line in quizfile.readlines():
+                # Strip the blank spaces from the ends of all terms.
+                terms = [t.strip() for t in line.split(DELIMITER)]
+                question = terms[0]
+                answers = [t for t in terms[1:] if t != '']
+
+                # Ignore empty questions or answers.
+                if question == '' or len(answers) < 1:
+                    continue
+
                 db[question] = answers
-    return db
-
-
-def make_test_set(db, quantity):
-    """
-    Takes a (presumably large) database and extracts the specified number of term/def pairs.
-    """
-    keylist = list(db.keys())
-    random.shuffle(keylist)
-
-    keylist = keylist[0:quantity]
-
-    test_set = {}
-    for key in keylist:
-        test_set[key] = db.get(key)
-
-    return test_set
-
-
-def choose_quiz():
-    """
-    List all the .quiz files in the specified quiz directory.
-    """
-    FILEPATH = './quiz/'
-    print("\nThe available topics are...")
-
-    quizlist = [f for f in os.listdir(FILEPATH) if str(f).endswith('.quiz')]
-
-    for i, quiz in enumerate(quizlist):
-        print('\t{}\t{}'.format(i, quiz))
-
-    while True:
-        print('\nPlease select the file number to work with:')
-        menunum = input('> ')
-        try:
-            menunum = int(menunum)
-            if menunum in range(len(quizlist)):
-                return FILEPATH + quizlist[menunum]
-            else:
-                print('Not a value menu option! Try again.')
-        except ValueError:
-            print('Not a value menu option! Try again.')
-
-
-if __name__ == "__main__":
-    os.system('clear')
-    print("Welcome to Erik's Python Quizinator!")
-
-    user = player.process_user()
-    filename = choose_quiz()
-    quiz = import_db(filename)
-
-    print('This quiz has {} questions...'.format(len(quiz)))
-    print('Beginning the quiz!!!\n\n')
-
-    failed, guesses = test(user, quiz)
-    solved = len(quiz) - len(failed)
-    accuracy = round((solved / guesses) * 100, 2)
-
-    # SUMMARY
-    print('#'*80)
-    print('='*80)
-    print('Showing your stats...')
-    print('-'*80)
-    print(filename)
-    print('Questions: {}'.format(len(quiz)))
-    print('Solved: {}'.format(solved))
-    print('Failed: {}'.format(len(failed)))
-    print('Guesses: {}'.format(guesses))
-    print('Accuracy: {}%'.format(accuracy))
-    print()
-    print('You got these incorrect:')
-    for k, v in failed.items():
-        print('Q:{} --> A: {}'.format(k, v))
-
-    player.save_user(user)
+        return db
