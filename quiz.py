@@ -2,8 +2,9 @@
 """
 Term and definition flashcard tester.
 
-This program works with text files of term/definitions and is able to import them and present
-the player with different sets of quizzes, analyze their answers, and provide useful reports.
+This program works with flat text files of term/definitions and is able to import them and
+present the player with different sets of quizzes, analyze their answers, and provide useful
+reports.
 
 Text files of ANSWER/QUESTION pairs are imported and converted to dictionaries. The dictionary
 keys are the answer
@@ -14,18 +15,20 @@ The text files have data stored as "ANSWER :: QUESTION"
 -- The QUESTION cannot contain numbers or non-english special characters.
 -- Notice that a the data files can contain more than one QUESTION for an ANSWER, so that we can
 take multiple answers. To accomodate multiple answers, whe
-
 """
+
 from __future__ import print_function
-import random
-import os
-import pickle
-import player
 import abbrev
+import os
+import player
+import random
 import re
 
 
 def display_db(quiz):
+    """
+    Show all questions and answers in the quiz.
+    """
     _str = ''
     for k, v in quiz.items():
         for item in v:
@@ -34,6 +37,9 @@ def display_db(quiz):
 
 
 def abbreviate(answer):
+    """
+    Accept an abbreviated version of a word in the answer.
+    """
     short_ans = answer[:]
     for k, v in abbrev.abbreviations.items():
         short_ans = re.sub(k, v, short_ans.lower())
@@ -44,7 +50,11 @@ def abbreviate(answer):
         return short_ans
 
 
-def is_correct(answers, guess):
+def check_guess(answers, guess):
+    """
+    Checks the user guess against the valid answers. Returns True if the answer matches a valid
+    answer.
+    """
     # Make sure that case does not matter. Check all as lowercase.
     if guess.lower() in [a.lower() for a in answers]:
         return True
@@ -62,7 +72,7 @@ def guess(question, answer):
         guess = input('> ')
         attempts += 1
 
-        if is_correct(answer, guess):
+        if check_guess(answer, guess):
             print('Correct!\n')
             return attempts
         else:
@@ -73,6 +83,9 @@ def guess(question, answer):
 
 
 def test(user, quiz):
+    """
+    Execute a test of the quiz to the user.
+    """
     failed = {}
     guesses = 0
 
@@ -132,7 +145,7 @@ def import_db(filename):
 
 def make_test_set(db, quantity):
     """
-    Takes the(presumably large) database and extracts the specified number of term/def pairs.
+    Takes a (presumably large) database and extracts the specified number of term/def pairs.
     """
     keylist = list(db.keys())
     random.shuffle(keylist)
@@ -148,12 +161,12 @@ def make_test_set(db, quantity):
 
 def choose_quiz():
     """
-    List all the .quiz files
+    List all the .quiz files in the specified quiz directory.
     """
-    filepath = './quiz/'
-    print()
-    print("The available topics are...")
-    quizlist = [f for f in os.listdir(filepath) if str(f).endswith('.quiz')]
+    FILEPATH = './quiz/'
+    print("\nThe available topics are...")
+
+    quizlist = [f for f in os.listdir(FILEPATH) if str(f).endswith('.quiz')]
 
     for i, quiz in enumerate(quizlist):
         print('\t{}\t{}'.format(i, quiz))
@@ -164,63 +177,18 @@ def choose_quiz():
         try:
             menunum = int(menunum)
             if menunum in range(len(quizlist)):
-                return filepath + quizlist[menunum]
+                return FILEPATH + quizlist[menunum]
             else:
                 print('Not a value menu option! Try again.')
         except ValueError:
             print('Not a value menu option! Try again.')
 
 
-def process_user():
-    """
-    Gets the username, checks for any previous player info and loads the player. If no player
-    file it creates a new one. Returns a Player object.
-    """
-    name = input('Please enter your name adventurous one > ')
-    userfile = str(name) + '.dat'
-    print('\n')
-    # check if they have a file
-    try:
-        with open(userfile, 'rb') as f:
-            print('Loading the player file...')
-            user = pickle.load(f)
-            return user
-
-    except IOError:
-        print('This user doesn\'t seem to have an account...')
-        print('Creating a new player file.')
-        return player.Player(name)
-
-
-def display_user(user):
-    """
-    Displays the player's information
-    """
-    print('Showing data for {}'.format(user.name))
-    print('Score: {}'.format(user.solved))
-    print('Guesses: {}'.format(user.guesses))
-
-
-def save_user(user):
-    """
-    Saves the players current stats to file.
-    """
-    userfile = user.name + '.dat'
-    print('Saving player file... ')
-
-    try:
-        with open(userfile, 'wb') as f:
-            pickle.dump(user, f)
-    except IOError:
-        print('An error occurred while writing, aborting program!')
-        exit()
-
-
-def main():
+if __name__ == "__main__":
     os.system('clear')
     print("Welcome to Erik's Python Quizinator!")
 
-    user = process_user()
+    user = player.process_user()
     filename = choose_quiz()
     quiz = import_db(filename)
 
@@ -230,7 +198,7 @@ def main():
     failed, guesses = test(user, quiz)
     solved = len(quiz) - len(failed)
     accuracy = round((solved / guesses) * 100, 2)
-    #  accuracy = (solved / guesses) * 100
+
     # SUMMARY
     print('#'*80)
     print('='*80)
@@ -247,30 +215,4 @@ def main():
     for k, v in failed.items():
         print('Q:{} --> A: {}'.format(k, v))
 
-    save_user(user)
-
-
-if __name__ == "__main__":
-    main()
-
-
-# MIT License
-# Copyright (c) [2016] [Erik S. Lunna]
-
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+    player.save_user(user)
