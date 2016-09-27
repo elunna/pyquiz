@@ -1,0 +1,207 @@
+
+FTP = :: File Transfer Protocol
+SSH = :: Secure Shell
+SMTP = :: Simple Mail Transfer Protocol
+DNS = :: Domain Name Service :: Domain Name Server
+HTTP = :: Hypertext Transfer Protocol
+HTTPS = :: Hypertext Transfer Protocol Secure
+POP = :: Post Office Protocol
+IMAP = :: Internet Message Access Protocol 
+RDP = :: Remote Desktop Protocol
+NetBIOS = :: Network Basic Input Output System :: Networked Basic Input Output System
+SLP = ::  Service Location Protocol
+SMB = :: Server Message Block
+AFP = :: Apple Filing Protocol
+DHCP = :: Dynamic Host Configuration Protocol
+LDAP = :: Lightweight Directory Access Protocol
+SNMP = :: Simple Network Management Protocol
+
+
+BIOS :: Basic Input/Output System
+POST :: Power-On Self Test
+UEFI :: Unified Extensible Firmware Interface
+CPU :: Central Processing Unit
+GUID :: Globally Unique Identifer
+GPT
+
+FAT :: File Allocation Table
+EFI :: Extensible Firmware Interface
+
+
+CMOS :: Complementary Metal-Oxide Semiconductor
+
+SSD :: 
+
+
+TPM :: Trusted Platform Module
+ATX :: Advanced Technology Extended
+ITX ::
+
+ZIF :: Zero-Insertion-Force
+PGA :: Pin Grid Array
+PGA2 :: Pin Grid Array 2
+LGA :: Land Grid Array
+
+IDE :: Integrated Drive Electronics
+PCI :: Peripheral Component Interconnect
+USB :: Universal Serial Bus
+GPU :: Graphics Processing Unit 
+DDR :: Double Data Rate
+DDR :: SDRAM Double Data Rate Synchronous Dynamic Random-Access Memory
+SODIMM :: Small Outline Dual Inline Memory Module
+ECC :: Error Correcting Code  ::  Error Checking and Correction
+PROM :: Programmable Read-Only Memory
+SDRAM :: Synchronous Dynamic Random Access Memory
+DIMM :: Dual Inline Memory Module
+SDR :: Single Data Rate
+
+
+EPROM :: Erasable Programmable Read-Only Memory
+
+EEPROM :: Electrically Erasable Programmable Read-Only Memory
+SRAM :: Static Random Access Memory
+CDROM :: Compact Disc-Read-Only Memory
+CDRW :: Compact Disc-Rewritable
+DVD :: Digital Video Disc  ::  Digital Versatile Disc
+DVDRAM :: Digital Video Disc-Random-Access Memory
+DVDROM :: Digital Video Disc-Read-Only Memory
+DVDR :: Digital Video Disc-Recordable
+DVDRW :: Digital Video Disc-Rewritable
+
+SSHD :: Solid State Hybrid Drive
+SATA :: Serial Advanced Technology Attachment
+eSATA :: External Serial Advanced Technology Attachment
+CF :: CompactFlash
+
+SD :: Secure Digital card :: Secure Digital
+
+LTO :: Linear Tape-Open
+
+
+RAID :: Redundant Array of Independent Discs  ::  Redundant Array of Inexpensive Discs
+HTT :: Hyper-Threading Technology
+
+IEEE :: Institute of Electrical and Electronics Engineers
+DVI :: Digital Visual Interface
+TRS :: Tip Ring Sleeve
+
+
+RJ11 :: Registered Jack 11
+RJ45 :: Registered Jack 45
+IrDA :: Infrared Data Association
+
+
+
+
+NFC :: Near Field Communication
+
+
+EDR :: Enhanced Data Rate
+
+DRM :: Digital Rights Management
+
+PCIe :: Peripheral Component Interconnect express
+PCIX :: Peripheral Component Interconnect Extended
+AC :: Alternating Current
+DC :: Direct Current
+PSU :: Power Supply Unit
+CAD :: Computer Aided Design
+
+CAM :: Computer Aided Manufacturing
+VDI :: Virtual Desktop Infrastructure
+
+LCD :: Liquid Crystal Display
+TN :: Twisted Nematic
+
+IPS :: In-Plane Switching
+
+CCFL :: Cold Cathode Fluorescent Lamp
+OLED :: Organic LED
+VGA :: Video Graphics Array
+HDMI :: High-Definition Media Interface
+VESA :: Video Electronics Standards Association
+RCA :: 
+
+
+DB-25 :: Serial Communications D-Shell Connector :: D Shell 25
+
+DB-9 :: 9 Pin D Shell Connector :: D Shell 9
+PS/2 :: Personal System/2
+SOHO :: Small Office, Home Office
+DIN :: Deutsche Industrie Norm
+TCP :: Transmission Control Protocol
+UDP :: User Datagram Protocol
+CMYK :: Cyan Magenta Yellow Black
+
+XPS :: XML Paper Specification
+
+OPC :: Organic Photoconductor Drum
+
+LPT :: Line Printer Terminal
+NIC :: Network Interface Card
+BNC :: Bayonet-Neill-Concelman  ::  British Naval Connector
+ST :: Straight Tip
+SC :: Subscription Channel :: Subscriber Connector :: Square Connector
+LC :: Lucent Connector
+WAN :: Wide Area Network
+RF :: Radio Frequency
+RFI :: Radio Frequency Interference
+UTP :: Unshielded Twisted Pair
+STP :: Shielded Twisted Pair
+IP :: Internet Protocol
+HVAC ::
+
+
+CRC ::
+
+
+OSI ::
+
+CIDR ::
+
+AES :: Advanced Encryption Standard
+CCMP :: Counter Mode with Cipher Block Chaining Message Authentication Code Protocol
+
+OPC :: Organic Photoconductor
+PAT :: Port Address Translation
+NAT :: Network Address Translation
+APIPA :: Automatic Private Internet Protocol Addressing
+IETF ::
+
+
+TCP/IP :: Transmission Control Protocol/Internet Protocol
+NTP :: Network Time Protocol
+MIMO :: Multiple Input, Multiple Output
+WPA :: Wireless Protected Access
+WEP :: Wired Equivalent Privacy
+TKIP :: Temporal Key Integrity Protocol
+IV :: Initialization Vector
+
+DMZ :: Demilitarized Zone
+MAC :: Media Access Control/Mandatory Access Control
+P2P :: Peer to Peer
+ADSL :: Asymmetrical Digital Subscriber Line
+DSL :: Digital Subscriber Line
+ISDN :: Integrated Services Digital Network
+PSTN :: Public Switched Telephone Network
+PBX ::
+
+PAN :: Personal Area Network
+IR :: Infrared
+ASIC :: Application Specific Integrated Circuit
+WAP :: Wireless Access Protocol :: Wireless Access Point
+POTS :: Plain Old Telephone Service
+GPS :: Global Positioning System
+WiFi :: Wireless Fidelity
+TRRS :: Tip-Ring-Ring-Sleeve
+
+
+TRRS :: Tip-Ring-Ring-Sleeve
+
+
+S.M.A.R.T. :: Self-Monitoring Analysis And Reporting Technology
+MBR :: Master Boot Record
+GRUB :: 
+LILO ::
+
+SSID :: Service Set Identifier

@@ -1,0 +1,20 @@
+One 12V rail power supply :: Single voltage rail :: Single rail
+Measurement of how many electroncs will flow past a point in 1 second :: Amps
+Symbol for AC current :: Wavey line
+Current where the direction constantly reverses. :: AC :: Alternating Current
+Multiple 12V rail supplies :: Multiple voltage rails
+AC :: Alternating Current
+DC :: Direct Current
+Current moves in one direction with a constant voltage :: Direct Current
+Measurement of real power use :: Watts
+Watts = :: Volts x Amps :: Amps x Volts
+Electrical "pressure" pushing electrons :: Voltage
+Number of pins on the original ATX standard :: 20
+Number of pins on PCI express power:: 24
+The old-school, 4 pin power connector, which powers many things :: Molex :: Molex connector
+A SATA power connector has how many pins? :: 15
+This 15 pin power connector provides +3.3V, +5V, and 12V. :: SATA
+What county has 220V to 240 VAC current? :: Europe
+What county has 110V to 220 VAC current? :: US :: United States :: Canada
+What hertz is American/Canadian VAC current? :: 60
+What hertz is European VAC current? :: 50
