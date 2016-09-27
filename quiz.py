@@ -45,6 +45,7 @@ class Quiz():
         """
         if self.counter >= self.qty:
             raise StopIteration()
+            return None
         elif self.move_on:
             self.counter += 1
             self.move_on = False
