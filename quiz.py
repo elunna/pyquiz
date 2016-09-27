@@ -18,11 +18,9 @@ take multiple answers. To accomodate multiple answers, whe
 """
 
 from __future__ import print_function
-import abbrev
 import os
 import player
 import random
-import re
 
 
 def display_db(quiz):
@@ -34,20 +32,6 @@ def display_db(quiz):
         for item in v:
             _str += '{} --> {}\n'.format(k, item)
     return _str
-
-
-def abbreviate(answer):
-    """
-    Accept an abbreviated version of a word in the answer.
-    """
-    short_ans = answer[:]
-    for k, v in abbrev.abbreviations.items():
-        short_ans = re.sub(k, v, short_ans.lower())
-
-    if answer.lower() == short_ans:
-        return None
-    else:
-        return short_ans
 
 
 def check_guess(answers, guess):
@@ -132,14 +116,6 @@ def import_db(filename):
                         db[question].append(a)
             else:
                 db[question] = answers
-
-            # Add abbreviated versions of answers
-            for ans in db[question]:
-                abb = abbreviate(ans)
-                if abb is None:
-                    pass
-                else:
-                    db[question].append(abb)
     return db
 
 
