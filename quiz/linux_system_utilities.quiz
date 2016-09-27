@@ -1,0 +1,41 @@
+print machine architecture :: arch
+Report file system disk space usage clearly. :: df -h
+Display the inode information of the file system. :: df -i
+Print the kernel ring buffer message log. :: dmesg
+View disk usage details. :: du -ach
+Calculate the size of the current folder. :: du -cksh
+Calculate the size of "dir". :: du -cksh dir
+View all environment variables: :: env
+Gnome System Monitor or /usr/bin/gnome-system-monitor :: gnome-system-monitor
+Run the printer control tool :: lpc
+Display all available info about the current distribution. :: lsb_release -a
+Get the server cpu info :: lscpu
+Lists all PCI buses and devices connected to them. :: lspci
+Lists all USB devices :: lsusb
+Lists detailed info about all USB devices :: lsusb -v
+Lists all mounted filesystems. :: mount -l
+Mount an "iso" to a specific "dir" :: mount -o loop iso dir
+Return the process ID of bash. :: pgrep bash
+Suspend the computer :: pm-suspend
+Display system statistics gathered from /proc :: procinfo
+Find "test" in the current running processes :: ps aux | grep test
+List every process on the system :: ps aux
+View info about running threads(via ps). :: ps -efH
+Print a process tree (via ps). :: ps -ejH
+See every process running as root :: ps -U root -u root u
+Restart the ssh service. :: service ssh restart
+Check the status of the ssh service :: service ssh status
+Check the status of all the services. :: service --status-all
+Display pertinant BIOS info :: dmidecode
+List the partition tables for /proc/partitions. :: fdisk -l
+View the current hardware date and time. :: hwclock
+Update grub2 :: update-grub2
+Edit the sudoers config file. :: visudo
+Check your operating system architecture :: uname -m
+Check your current kernel. :: uname -r
+Show just the system uptime, human readable. :: uptime -p
+Show system's uptime, number of logged in users, load avg, and time. :: uptime
+Time zone data files directory. :: /usr/share/zoneinfo
+Report virtual memory statistics :: vmstat
+View all the info/statistics about an X window. :: xwininfo
+Format the harddrive and create a new ext4 file system. :: mkfs.ext4 /dev/sda1

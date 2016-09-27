@@ -1,0 +1,55 @@
+tar czvf zip files  :: Create a gzip compressed tar "zip" from "files"(verbose).
+ :: Create a bzip compressed tar "zip" from "files"(verbose):: tar cjvf zip files 
+tar cvf zip files  :: Create an uncompressed tar "zip" from "files"(verbose).
+tar xvf zip f  :: Unzip most general compressed files as "f"(verbose).
+cd -P link  :: Follow a symlink (supposedly)
+man cmd | col -b > cmd.txt  :: Save a man page (for "cmd") as a txt file and remove control characters.
+rm -I  :: Prompt if rm-ing 3+ files.
+rm --preserve-root  :: Do not remove '/' when rm-ing files.
+rm -rf .*  :: Delete all your configuration files.
+rm -rf ~  :: Delete everything in home folder.
+rm -rf /  :: Delete everything on the hard drive.
+mkdir -p x/y/z  :: Create a new directory tree "x/y/z"
+ls /dev  :: List device special files
+ls /boot  :: List files that are on my /boot partition
+ls -/media/$USER  :: List media devices (mounted?)
+ :: Switch the root user account (preserve environment settings) ::su -
+sudo -i :: Become root in the current terminal(longer command)
+chmod --preserve-root :: cdmod with protection
+passwd -aS :: Show password status for all users
+Write junk onto the Hard Drive :: dd if=/dev/random of=/dev/sda
+Write 0's onto the Hard Drive :: dd if=/dev/zero of=/dev/sda
+ :: 
+date -u  :: Display Greenwich Mean Time
+date +%m %d %y :: Display date (month date year)
+ :: 
+Remove directory and suffix from a filename "path". :: basename path
+Send "cmd" output to standard output AND append to "file". :: cmd | tee -a file
+Send "cmd" output to "file" AND standard output. :: cmd | tee file
+Convert vid.mpg to vid.avi. :: ffmpeg -i vid.mpg vid.avi
+Determine the file type of "f" :: file f
+Decompresses "files.gz" back to files :: gzip -d files.gz
+Compress "files" into files.gz :: gzip files
+View the Info docs :: info
+Create a hard link to source as link. :: link src link
+Create a symbolic link to source as link. :: ln -s src link
+Look for any lines in file which contain "the" as a prefix. :: look "the" file
+Create a randomly generated temp filename in the current directory. :: mktemp -p .
+Rename all .txt files to .html files. :: rename 's/\.txt/\.html/' *
+Display the contents of file "f" in reverse. :: rev f
+Display the lines of "file" in random order. (not sort!) :: shuf file
+Print the strings of printable characters in "file". :: strings file
+Translate all letters in "file" to lowercase. :: tr A-Z a-z < file
+Translate all letters in "file" to uppercase. :: tr a-z A-Z < file
+Retrieve the clipboard contents from xclip. :: xclip -o
+Paste from the X-clipboard :: xclip -selection o
+ :: 
+List detailed information about a ZIP archive :: zipinfo file
+Search the manual page names and descriptions for "keyword" :: apropos keyword
+cdgrp with protection :: chgrp --preserve-root
+ :: 
+Select only the duplicate lines from "file" (required to be sorted) :: uniq -d file
+View the unique lines from "file"(required to be sorted) :: uniq file
+Show lines from "file" with counts of duplicates(required to be sorted) :: uniq -c file
+Show permissions :: stat --printf "%a %n \n "
+Echo constant output stream of y and newlines. :: yes

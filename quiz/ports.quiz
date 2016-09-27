@@ -4,23 +4,26 @@ SSH port :: TCP 22
 Telnet port :: TCP 23
 SMTP port :: TCP 25
 DNS port :: UDP 53
+DHCP(first) port :: UDP 67
+DHCP(second) port :: UDP 68
 HTTP port :: TCP 80
 HTTPS port :: TCP 443
-POP3 port :: TCP 1120
+POP3 port :: TCP 110
 IMAP4 port :: TCP 143
-RDP port :: TCP 3389
 NetBIOS name services port :: UDP 137
 NetBIOS datagram service port :: UDP 138
 NetBIOS session service port :: TCP 139
+SNMP port :: UDP 161
+LDAP(TCP port) port :: 389
+LDAP(UDP port) port :: 389
 SLP(TCP port) port :: 427
 SLP(UDP port) port :: 427
 SMB port :: TCP 445
 AFP port :: TCP 548
-DHCP(first) port :: UDP 67
-DHCP(second) port :: UDP 68
-LDAP(TCP port) port :: 389
-LDAP(UDP port) port :: 389
-SNMP port :: UDP 161
+RDP port :: TCP 3389
+
+WHOIS Port :: TCP 43 
+Finger Port :: TCP 79
 
 Sends and receives files between systems :: FTP
 Encrypted console access :: SSH
@@ -34,28 +37,10 @@ Web server communication with encryption :: HTTPS
 Graphical display of remote devices :: RDP
 Register, remove, and find Windows services by name :: NetBIOS name service
 Windows connectionless data transfer :: NetBIOS datagram service
-Windows connection-oriented data transfer :: NetBIOS serssion service
+Windows connection-oriented data transfer :: NetBIOS session service
 Find Mac OS services by name :: SLP
 Windows file tranfers and printer sharing :: SMB
 Mac OS file transfers :: AFP
 Automate the IP address configuration process :: DHCP
 Directory service protocol :: LDAP
 Gather matrics and manage network devices :: SNMP
-
-FTP = :: File Transfer Protocol
-SSH = :: Secure Shell
-Telnet = :: Telecommunication Network
-SMTP = :: Simple Mail Transfer Protocol
-DNS = :: Domain Name Service :: Domain Name Server
-HTTP = :: Hypertext Transfer Protocol
-HTTPS = :: Hypertext Transfer Protocol Secure
-POP = :: Post Office Protocol
-IMAP = :: Internet Message Access Protocol 
-RDP = :: Remote Desktop Protocol
-NetBIOS = :: Network Basic Input Output System :: Networked Basic Input Output System
-SLP = ::  Service Location Protocol
-SMB = :: Server Message Block
-AFP = :: Apple Filing Protocol
-DHCP = :: Dynamic Host Configuration Protocol
-LDAP = :: Lightweight Directory Access Protocol
-SNMP = :: Simple Network Management Protocol

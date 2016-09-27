@@ -1,0 +1,31 @@
+Add all files tothe staging area :: git add --all 
+Add a file to the staging area :: git add :
+List all branches, including remote. :: git branch all 
+Delete branch "b" :: git branch -d b
+List all branches :: git branch 
+Create a new branch and checkout. :: git checkout -b
+Checkout a branch :: git checkout 
+Commit with a messge :: git commit -m 
+Amend the last commit :: git commit -v --amend 
+(git): Open the config file? :: git config --global -e
+List the config file contents :: git config --list 
+(git): See the differences between the other branch/tree :: git diff 
+Show the log, with extra details. :: git log --decorate 
+Show the log with graphical representation. :: git log --graph 
+Show the log, one line per commit. :: git log --oneline 
+Merge a branch into this one. :: git merge 
+Pull :: git pull 
+???????????/ :: git pull --rebase 
+Push :: git push 
+Unstage a file "file" :: git reset file 
+????????? :: git reset HEAD -- 
+Pop (and leave a copy of) the first stashed set of changes. :: git stash apply 
+Delete all in the stash :: git stash clear 
+drop a stash point????? :: git stash drop 
+Remove a stashed set of changes :: git stash drop 
+Oush a new stash onto your stack. :: git stash :
+List stashed changes :: git stash list 
+Pop & remove the first stashed set of changes. :: git stash pop 
+Stash something with msg "msg" :: git stash save msg 
+Show status :: git status 
+Show status, short form :: git status -s

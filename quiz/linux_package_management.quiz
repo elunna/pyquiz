@@ -1,0 +1,21 @@
+Check whether a package is installed. :: dpkg -l | grep package
+View/list all installed kernels on your system :: dpkg --list | grep linux-image
+Find packages that include "keyword" (dpkg version) :: dpkg -l keyword
+List files in "package" :: dpkg -L package
+Show a package description and details.(dpkg version) :: dpkg --print-avail package
+Reconfigure the named package. :: dpkg-reconfigure package
+List all the available packages :: apt-cache pkgnames
+Find packages that include "keyword". :: apt-cache search keyword
+See all available kernels for download. :: apt-cache search linux-image
+Show a package description and details. :: apt-cache show package
+Check overall statistics on the cache. :: apt-cache stats
+
+Removes .deb files that are no longer needed. :: apt-get autoclean 
+Remove an installed package and dependencies. :: apt-get autoremove package 
+Remove packages installed by other packages that are no longer needed. :: apt-get autoremove 
+Search repos and install build dependencies for "package". :: apt-get build-dep package 
+Update package lists and check for broken dependencies. :: apt-get check 
+Upgrade all installed packaged using "smart" conflict resolution. :: apt-get dist-upgrade 
+Simulate the installation of "package" :: apt-get install -s package 
+Remove a specific kernel "linux-image" :: apt-get purge linux-image 
+Determine which installed package owns "package" :: dlocate package 
