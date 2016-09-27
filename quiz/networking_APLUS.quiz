@@ -1,0 +1,25 @@
+APIPA :: Automatic Private IP Addressing
+Bytes in an IPv4 address. :: 4
+Bytes in an IPv4 address. :: 16
+Bits in an IPv4 address. :: 32
+Bits in an IPv4 address. :: 128
+First 64 bits of an IPv6 address. :: Network prefix
+Last 64 bits of an IPv6 address. :: Host address
+Compress fe80:0000:0000:0000:cabc:c800:00a7:08d5 :: fe80::cabc:c800:a7:8d5
+Compress 2000:0bb0:0000:0000:0000:0000:00a0:0002 :: 2000:bb0::a0:2
+Allows you to communicate outside of your local subnet. :: Default Gateway
+Used by the local workstation to determine what subnet it's on.:: Subnet Mask
+CIDR :: Classless Interdomain Routing
+Connection-oriented protocol. For Reliable delivery. :: TCP
+Connectionless protocol. Unreliable. No reordering of data or retransmissions. :: UDP
+This type of port number is permanent. :: Non ephemeral :: Non-ephemeral
+This type of port number is temporary. :: Ephemeral
+Range that TCP and UDP port numbers can be assigned to. :: 0-65535
+When a destination address is translated from a public IP to a private IP. :: Port forwarding
+If you want the functionality of a port forward, but don't want it configured 24/7. :: Port triggering
+Device where traffic going in one port is repeated to every other port. :: Hub
+The speed of a hub. :: Half duplex
+Device that forwards traffic based on data link address. :: Switch
+Routes traffic between IP subnets. :: Router
+Makes forwarding decisions based on IP address and often connects diverse network types. :: Router
+Filters traffic by TCP or UDP port number, or application. :: Firewall

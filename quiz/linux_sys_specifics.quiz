@@ -1,0 +1,53 @@
+Location of grub config file. :: /boot/grub/grub.cfg
+Display static file system information. :: cat /etc/fstab
+View internet protocols :: cat /etc/protocols
+View network services, internet style :: cat /etc/services
+Shows the swappiness setting. :: cat /proc/sys/vm/swappiness
+Display the current linux distribution :: cat /etc/issue
+First audio device :: /dev/dsp
+Standard gameport joystick :: /dev/js0
+Loopback device :: /dev/loop0
+First parallel port, LPT1(printers, scanners, etc). :: /dev/lp0
+"black hole", data sent here is lost/auto-discarded :: /dev/null
+PS/2 mouse connection (mice, keyboards). :: /dev/psaux
+Random # generator :: /dev/random
+First SCSI CD-ROM device. :: /dev/scd
+First SCSI device (HDD, Memory Stick, ext storage devices, etc). :: /dev/sda
+First serial port, COM1 (mice, modems). :: /dev/ttyS0
+Another random # generator(doesn't wait for sufficient entropy) :: /dev/urandom
+USB Devices directory :: /dev/usb
+Source of 0's from system :: /dev/zero
+ :: du -s /home/* || View how much space user home directories are using.
+Display how much space cached packages are consuming. :: du -sh /var/cache/apt/archives
+Information about groups on the system. :: /etc/group
+Location of the system's host config file. :: /etc/host.conf
+Location of hosts file. :: /etc/hosts
+Startup scripts directory :: /etc/init.d
+Location of the Message Of The Day :: /etc/motd
+Contains a list of all currently mounted devices. :: /etc/mtab
+User account info :: /etc/passwd
+The bash system profile file. :: /etc/profile
+Contains a list of the available shells. :: /etc/shells
+The kernel paramters by sysctl config file. :: /etc/sysctl.conf
+The apache web server config file. :: httpd.conf
+The LILO boot loader config file. :: lilo.conf
+View all the files in the thumbnail cache :: ls ~/.cache/thumbnails/normal
+DNS name server (BIND) config file :: named.conf
+Shows Kernel comand line :: /proc/cmdline
+gzip-compressed configuration file of the kernel currently running :: /proc/config.gz
+Info on the server cpu(older way) :: /proc/cpuinfo
+Info about the allocation and use of CPU interrupts: :: /proc/interrupts
+Contains info about load average figures. :: /proc/loadavg
+Detailed information about memory usage :: /proc/meminfo
+Shows Kernel modules loaded. :: /proc/modules
+Contains info about the partitions on the hard disk. :: /proc/partitions
+Halt the system :: /sbin/halt
+ Script that creates all devices known. :: /sbin/MAKEDEV
+The Samba server (file and print for Windows) :: smb.conf
+The SSH config file :: ssh_config
+The system log daemon (syslogd) config file :: syslog.conf
+View system logs :: tail /var/log/syslog
+View system log in real time. :: tail -f /var/log/syslog
+View message logs :: tail /var/log/messages
+Remove the trash bin :: rm -rfv ~/.local/share/Trash/*
+Re-source the bashrc file. :: source /etc/bash.bashrc

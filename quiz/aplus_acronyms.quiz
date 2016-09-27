@@ -1,3 +1,4 @@
+
 FTP = :: File Transfer Protocol
 SSH = :: Secure Shell
 SMTP = :: Simple Mail Transfer Protocol
@@ -14,13 +15,14 @@ AFP = :: Apple Filing Protocol
 DHCP = :: Dynamic Host Configuration Protocol
 LDAP = :: Lightweight Directory Access Protocol
 SNMP = :: Simple Network Management Protocol
+
+
 BIOS :: Basic Input/Output System
 POST :: Power-On Self Test
 UEFI :: Unified Extensible Firmware Interface
 CPU :: Central Processing Unit
 GUID :: Globally Unique Identifer
 GPT
-NX Bit :: No Execute Bit :: No Execute
 
 FAT :: File Allocation Table
 EFI :: Extensible Firmware Interface

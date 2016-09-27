@@ -1,0 +1,11 @@
+Get DNS information for "domain" :: dig domain
+Show the system's hostname :: hostname
+Lookup the host name "website" :: host website
+get a list of all current active connections. :: netstat -an
+Quickly list all TCP/UDP ports on the server. :: netstat -tulamp
+Ping google :: ping -c 4 www.google.com
+Display list of open sockets :: socklist
+ :: ufw enable:: Turn on the Uncomplicated Firewall
+View all rules for the Uncomplicated Firewall :: ufw show raw
+View the status of the Uncomplicated Firewall :: ufw status verbose
+Grab the headers from a web page. :: /usr/bin/curl -I -L test

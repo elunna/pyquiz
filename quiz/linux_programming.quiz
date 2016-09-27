@@ -1,0 +1,15 @@
+Compile C code file "x.c" (second level of optimization) :: gcc x.c -o2 x
+Compile C code file "x.c" (third level of optimization) :: gcc x.c -o3 x 
+Compile C code file "x.c" to the default name. :: gcc x.c -o 
+Compile C code file "x.c" (fast optimization) :: gcc x.c -ofast x
+Compile C code file "x.c" (first level of optimization) :: gcc x.c -o x 
+Compile C code file "x.c" (increased warning checks) :: gcc x.c -Wall -o x
+Compile C code file "x.c" (no compile with warnings) :: gcc x.c -Werror -o x
+Compile C code file "x.c" (ALL warning checks) :: gcc x.c -Wextra -o x
+
+Find out which libraries the dynamic executable "p" loads. :: ldd p
+Trace the library calls of a process "p". :: ltrace p 
+Run "code.py" with Python and use the interactive interpreter mode  :: python -i code.py 
+Trace the system calls and signals of a program "p". :: strace p 
+Rebuild all the Python modules :: update-python-modules -av 
+Record a shell script session to "file" :: script -a file 

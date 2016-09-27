@@ -1,0 +1,91 @@
+Cut the first character from each line of "file" :: cut -c1 file 
+Cut the characters 5-10 from each line of "file" :: cut -c5-10 file 
+Cut everything past the first 5 characters of "file" :: cut -c-5 file 
+Cut the first 5 characters from each line of "file" :: cut -c5- file 
+Cut fields 1 and 3 from file, delimiter=':' :: cut -d ':' -f1,3 file 
+Cut fields 1 through 3 from file, delimiter=':' :: cut -d ':' -f1,3 file 
+List all users you can use: :: cut -d: -f1 /etc/passwd 
+Cut the first field of file, delimiter=':' :: cut -d ':' -f1 file 
+
+Open crontab :: crontab -e 
+Backup the crontab file to "backup" :: crontab -l > backup 
+List crontab entries :: crontab -l 
+View crontab entries for a specific "user" :: crontab -u user -l 
+
+Find all empty files under current dir. :: find . -empty 
+Find all the empty files under the home directory. :: find ~ -empty 
+Find "x" from current dir, case insensitive (ignore errors) :: find . -iname x 2>/dev/null 
+Find "x" from current dir, case insensitive :: find . -iname x 
+Remove a file "x" by inode :: find -inum x -exec rm -i  {} \;
+Find config files in home directory :: find ~ -maxdepth 1 -name '.*' -type f
+Find all files w/o extensions in current dir. :: find . -maxdepth 1 -type f ! -name "*.*" 
+Find file(s) "x" from root, case insensitive. :: find / -mount -type f -iname x
+Find all files edited in the last day :: find . -mtime -1 -type f 
+Find all mp3s under current dir. :: find . -name *.mp3 
+Find files ending with "x", case sensitive :: find . -name *x 
+Find files starting with "x", case sensitive :: find . -name x* 
+Find all world-writable files :: find / -perm -2 -type f -print 
+Find all symlinks under current directory tree. :: find . -type l
+
+Grep and display 5 lines after matches in "file", case sensitive. :: grep -A 5 "def" file 
+Grep and display 5 lines before matches in "file", case sensitive. :: grep -B 5 "def" file 
+Grep and display 5 lines around matches in "file", case sensitive. :: grep -C 5 "def" file 
+Count the number of "def"s in all .py files. :: grep -c "def" *.py 
+Grep for "def" in the single file "file", case sensitive :: grep "def" file 
+Search all .py files for lines containing "def" :: grep "def" *.py 
+Grep for "def" in the single file "file", case insensitive :: grep -i "def" file 
+Grep for the full word "def" in "file, case insensitive. :: grep -iw "def" file 
+Display filenames which contain the text that matches "def" from all *.py :: grep -l "def" *.py 
+Grep *.py files for "def" and show the lines along with the line numbers. :: grep -n "def" *.py 
+Grep all files under current directory recursively for "def" :: grep -r "def" 
+Print lines that do not have "def" in .py files. :: grep -v "def" *.py 
+grep a file and don't show commented lines(#) :: grep -ve ^# file 
+grep a file and don't show empty lines :: grep -ve ^$ file 
+
+(sed) Delete the first 10 lines of "f". :: sed '1, 10d' f
+(sed) Reverse the order of the lines in "f" :: sed '1!G;h;$!d' f
+(sed) Delete blank lines from "f" :: sed '/^$/d' f
+(sed) Delete the last line of "f" :: sed '$d' f
+(sed) Double-space "f" to only 1 space max. :: sed '/^$/d' f
+(sed) Trim blank lines from beginning of "f". :: sed '/./,$!d' f
+(sed) Double-space "f" :: sed G f 
+(sed) Extract lines 10-20 from "src" and output to "dest" :: sed -n '10,20p' src > dest 
+(sed) Add a blank line after every 5 lines :: sed 'n;n;n;n;G;' f
+(sed) Delete the last 2 lines of "f" :: sed 'N;$!P;$!D$d' f
+(sed) Count lines in "f" :: sed -n '$=' 
+(sed) Change 2nd instance of blue on each line to red in "f" :: sed 's/blue/red/2' f
+(sed) Change first instance of blue on each line to red in "f" :: sed 's/blue/red/' f
+(sed) Change all instances of blue to red in "f" :: sed 's/blue/red/g' f 
+(sed) Change all "blue"s and "red"s to xxx in "f" :: sed 's/blue/xxx/g;s/red/xxx/g' f
+(sed) Delete all occurrences of foo from "f" :: sed 's/foo//g' f
+(sed) Add '> ' to the beginning of each line in "f" :: sed 's/^/> /' f
+(sed) Remove '> ' from the beginning of each line in "f" :: sed 's/^> //' f 
+
+Sort "file" and ignore leading blanks :: sort -b file 
+Check if "file" is in sorted order. :: sort -c file 
+Sort "file" alphabetically :: sort file 
+Sort "file" by correct Month order. :: sort -M file 
+Sort file "input" and output to file "output" :: sort -o output input 
+Sort "file" using a random sort. :: sort -R file 
+Sort "file" using reverse order :: sort -r file 
+Sort "file" and remove duplicate lines. :: sort -u file 
+
+Count the bytes in a file :: wc -c
+Count the length of the longest line in a file. :: wc -L
+Count the lines in a file :: wc -l
+Count the characters in a file :: wc -m
+Count the words in a file :: wc -w
+
+Download webpage "page" in background. :: wget -b page 
+Continue downloading a single webpage "page" :: wget -c page 
+Download webpage "page" and limit the download rate to 20K :: wget --limit-rate=20K page 
+Download a single webpage "page" :: wget page 
+wget "page" and all its links, make it locally browesable. :: wget -r -l 1 --convert-links page 
+Download a website "page" recursively. :: wget -r -l 1 page 
+Download a website "page" recursively. :: wget -r page 
+Download a single webpage "page" as Chrome. :: wget -U Chrome 
+wget "page" and pause 20 seconds between retrievals. :: wget --wait=20 page 
+
+(awk) Double space a line :: awk '1; { print ""}' file 
+(awk) print the 1st column of a file. :: awk '{print $1}' file 
+(awk) print the 2nd column of a file. :: awk '{print $1}' file 

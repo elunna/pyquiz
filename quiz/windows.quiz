@@ -1,0 +1,66 @@
+List files and directories :: DIR
+Remove a file :: DEL
+Make directory :: MD 
+Change directory :: CD 
+Remove directory :: RD 
+Get help on a command "cmd" :: help cmd :: cmd /?
+Exit the cmd prompt :: EXIT 
+Copy and Verify that new files are written correctly :: COPY /v
+Copy and Suppress prompting to confirm overwrite existing files. :: COPY /y
+Copy all files/subdirectories(even empty ones) from A: to B: :: xcopy a: b: /s /e
+Copy all files/subdirectories(not empty ones) from A: to B: :: xcopy a: b: /s 
+Copy all files from dir1 to dir2: :: xcopy dir1 dir2
+Robust copy, a better XCOPY :: ROBOCOPY
+Fix errors on the disk :: CHKDSK /f
+Formats the D: for use with Windows :: format d:
+Fix the MBR on a physical drive. :: BOOTREC /fixmbr 
+Repair the volume boot record. Write a new boot sector :: BOOTREC /fixboot
+Scan disks for Windows installations. :: BOOTREC /scanos
+Create a new Boot Config Data store. :: BOOTREC /rebuildbcd 
+Configure, format, and change existing volumes on your computer. :: diskpart
+Get help in the DISKPART> prompt :: help
+List volumes in the DISKPART> prompt :: list volume
+Resolve problems with Windows partitions or manage disk configurations. :: diskpart
+Test the reachability of the network :: ping
+Determine TCP/IP and network adapter info. :: ppconfig 
+Determine the route a packet takes to a destination. :: TRACERT
+Get network statistics :: NETSTAT
+Shows status of all active connections in use(Both TCP and UDP) :: netstat -a
+Network statistics. Shows binaries and executables in use. :: netstat -b
+Show network statistics. Do not resolve names; simply show IP addresses. :: netstat -n
+windows utility for querying NetBIOS over TCP/IP info. :: nbtstat
+List local NetBIOS names :: nbtstat -n 
+List remote NetBIOS names, referenced by IP address. :: nbtstat -A 192.168.1.1 
+List remote NetBIOS names, referenced by name. :: nbtstat -a server1 
+Stop the spooler service :: net stop spooler
+Start the spooler service :: net start spooler
+Map a network share to a drive letter. :: NET USE
+Map the network share \server\share to h: :: net use h: \\server\share
+View network resources :: NET VIEW
+View network resources for \server    ie: net view \\server
+View network resources for the workgroup fish :: net view /workgroup:fish
+View domain info. :: NETDOM
+Lookup info from DNS servers on www.google.com :: nslookup www.google.com
+Moves file fragments so they are contiguous on c: :: defrag c:
+Displays a list of currently running processes :: TASKLIST
+Kill notepad.exe :: TASKKILL /IM notepad.exe
+Kill process 1234 :: TASKKILL /PID 1234
+Kill word.exe and all child processes :: TASKKILL /T word.exe
+Scan integrity of all protected system files. :: sfc /scannow
+Shutdown in 60 seconds :: shutdown /s /t 60 
+Shutdown in 60 seconds and restart. :: shutdown /r /t 60
+Abort the shutdown countdown :: shutdown /a
+Used to remove files from the cabinet. :: EXPAND
+Display files in a cabinet "cab" :: expand -d cab
+Extract file "f" in "cab" cabinet to c: :: expand cab -f:file c:
+Microsoft Management Console :: MMC.EXE
+Control Background processes. :: services.msc
+Access the Windows Registry :: Regedit
+Microsoft Register Server. :: REGSVR32
+Managers drivers and devices: Add, remove, disable driver :: devmgmt.exe
+Microsoft Terminal Services Client(Remote Desktop connection) :: MSTSC
+Windows System Info :: MSINFO32
+DirectX Diagnostic Tool; Manage your DirectX :: DXDIAG:
+Microsoft System Configuration :: MSCONFIG
+Utility to Force a Group Policy update. :: GPUPDATE:
+Verify policy settings for a computer or user :: GPRESULT:

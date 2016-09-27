@@ -1,0 +1,64 @@
+Run command #10 from the history. :: !10
+Run the 10th to last command. :: !-10
+View all aliases. :: alias
+"Bang Bang" - Repeat last command. :: !!
+Start calculator in interactive mode :: bc -l
+Lists stopped or background jobs :: bg
+Display the system calendar :: cal
+Display system calendar using Julian date. :: cal -j
+Display a calendar of all months of the year. :: cal -y
+Display contents of "file" :: cat file
+Display contents of "file" with line numbers :: cat -n file
+Append contents of "x" to "file" :: cat x >> file
+Clear the screen :: clear
+Run "cmd" as a background process :: cmd&
+Compare two files "a" and "b", report if they are different. :: cmp a b
+Make the cow say hello :: cowsay hello
+Display system date :: date
+Reverse polish notation calculator :: dc
+Show the differences between "file1" and "file2" :: diff file1 file2
+Show the differences between "file1" and "file2", ignoring whitespace :: diff -w file1 file2
+View PATH variable. :: echo $PATH
+Display what shell you are currently using. :: echo $SHELL
+Eject media device. :: eject
+Close CD-Rom Tray :: eject -t
+Go back to upper process (foreground) :: fg
+Repeat the last command and substitute "foo" with "bar"  :: ^foo^bar
+View free memory/disk info :: free
+Display the first 20 lines of "file" :: head -20 file
+Display the first 10 lines of "file" :: head file
+Clear history :: history –c
+Display the command history. :: history
+A better 'top'. :: htop
+View current jobs :: jobs
+List locations you can find index.html (case insensitive) :: locate -i index.html
+List locations you can find index.html. :: locate index.html
+Play all mp3s in a directory :: mplayer *.mp3
+Refer to the previous command. :: !!
+"Shebang" :: #!
+Sleep for 5 seconds. :: sleep 5s
+Display the last 20 lines of "file" :: tail -20 file
+View a file as it updates :: tail --f
+Display the last 10 lines of "file" :: tail file
+The first argument of the last set of args given. :: !^
+The last argument of the last set of args given. :: !$
+Interactively view the system table of processes :: top
+View the system table of processes once and exit. :: top -n 1
+Update the access time on "file". :: touch -a file
+Update the access and modification time on "file". :: touch file
+Update the modified time on "file" :: touch -m file
+View what type of command "cmd" is and how the shell handles it. :: type cmd
+Remove all aliases :: unalias -a
+Remove an alias "x" :: unalias x
+Unzip a "zip" to the specified "dir" :: unzip zip -d dir
+Unzip all files in "zip" to the current directory. :: unzip zip
+Value is the process ID of the shell. :: $$
+Find out who is logged onto the system and what each user is doing.  :: w
+Get brief info on a cmd. :: whatis cmd
+Locate the binary, source, and manual page files for "cmd". :: whereis cmd
+Get path and file name of the executable "cmd".  :: which cmd
+Display current userid. :: whoami
+Print system login processes :: who -l
+Quick list all login names and number of users logged on :: who -q
+Print current runlevel. :: who -r
+Run last command with "x" :: !x
