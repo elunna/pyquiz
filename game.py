@@ -67,7 +67,18 @@ if __name__ == "__main__":
     os.system('clear')
     print("Welcome to Erik's Python Quizinator!")
 
-    user = player.process_user()
+    while True:
+        name = input('Please enter your name > ')
+        user = player.load_player(name)
+        if user is None:
+            print('Do you want to create a new player?')
+            choice = input('> ')
+            if choice.lower().startswith('y'):
+                user = player.Player(name=name)
+                break
+        else:
+            break
+
     filename = choose_quiz()
     q = quiz.Quiz(filename)
 
