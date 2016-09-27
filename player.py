@@ -1,4 +1,7 @@
 import pickle
+import os
+
+DATADIR = 'data/'
 
 
 class Player():
@@ -19,32 +22,36 @@ class Player():
         print('Guesses: {}'.format(user.guesses))
 
 
-def process_user():
+def ensure_datadir():
+    d = os.path.dirname(DATADIR)
+    if not os.path.exists(d):
+        os.makedirs(d)
+
+
+def load_player(name):
     """
     Gets the username, checks for any previous player info and loads the player. If no player
     file it creates a new one. Returns a Player object.
     """
-    name = input('Please enter your name > ')
-    userfile = name + '.dat'
-    print('\n')
+    userfile = DATADIR + name + '.dat'
     try:
         with open(userfile, 'rb') as f:
             print('Loading the player file...')
-            user = pickle.load(f)
-            return user
+            p = pickle.load(f)
+            return p
 
     except IOError:
-        print('This user doesn\'t seem to have an account...')
-        print('Creating a new player file.')
-        return Player(name=name)
+        print('No player found!')
+        return None
 
 
-def save_user(user, directory):
+def save_user(user):
     """
     Saves the players current stats to file.
     """
-    userfile = directory + user.name + '.dat'
+    userfile = DATADIR + user.name + '.dat'
     print('Saving player file... ')
+    ensure_datadir()
 
     try:
         with open(userfile, 'wb') as f:
