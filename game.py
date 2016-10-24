@@ -20,7 +20,23 @@ take multiple answers. To accomodate multiple answers, whe
 from __future__ import print_function
 import os
 import player
+import random
 import quiz
+
+good = ('Correct!', 'Yep!', 'Good!', 'Awesome!', "Correct.", "Affirmative.",
+        "Yes.", "Yeap!" "Super!", "Fantastic!", "Good!", "Awesome!", "Nice!",
+        "Excellent!", "Bravo!", "Boom!", "Boom-Shakka!", "Delightful!", "Extrodinary!",
+        "Amazing!", "Tasty!", "Delicious!", "Perfect!", "Flawless!", "Superb!")
+
+bad = ("Sorry, but no.", "Nope.", "Not it.", "No good.", "Wrong answer", "Try again.",
+       "No.", "Negative.", "Incorrect.")
+
+
+def get_feedback(result):
+    if result:
+        return random.choice(good)
+    else:
+        return random.choice(bad)
 
 
 def test(q):
@@ -31,8 +47,8 @@ def test(q):
         print('-'*40 + '-')
         print('#{}: {}'.format(q.counter + 1, question))
         guess = input('> ')
-
-        print(q.check_guess(guess))
+        result = q.check_guess(guess)
+        print(get_feedback(result))
 
 
 def choose_quiz():
@@ -62,7 +78,7 @@ def choose_quiz():
 
 if __name__ == "__main__":
     os.system('clear')
-    print("Welcome to Erik's Python Quizinator!")
+    print("Python Quizinator!")
 
     while True:
         name = input('Please enter your name > ')
@@ -79,19 +95,19 @@ if __name__ == "__main__":
     filename = choose_quiz()
     q = quiz.Quiz(filename)
 
-    print('This quiz has {} questions...'.format(len(q)))
+    print('This quiz has {} questions, the full quiz-set has {} questions.'.format(
+        len(q), len(q.quiz))
+    )
     print('Beginning the quiz!!!\n\n')
 
     test(q)
 
-    # SUMMARY
     print('~'*80)
     print('Showing your stats...')
-    str(q)
+    print(q)
     print('~'*80)
     print(filename)
-    print()
-    print('You got these incorrect:')
-    q.show_failed()
+    print('\nYou got these incorrect:')
+    print(q.show_failed())
 
     player.save_user(user)

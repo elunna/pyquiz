@@ -62,12 +62,12 @@ class Quiz():
         Shows the statistics on the current quiz in progress.
         """
         _str = ''
-        _str += 'Game in progress? {}'.format(self.move_on)
-        _str += 'Questions: {}'.format(len(self))
-        _str += 'Solved: {}'.format(self.solved)
-        _str += 'Failed: {}'.format(len(self.failed))
-        _str += 'Guesses: {}'.format(self.guesses)
-        _str += 'Accuracy: {}%'.format(self.accuracy())
+        _str += 'Game in progress? {}\n'.format(self.move_on)
+        _str += 'Questions: {}\n'.format(len(self))
+        _str += 'Solved: {}\n'.format(self.solved)
+        _str += 'Failed: {}\n'.format(len(self.failed))
+        _str += 'Guesses: {}\n'.format(self.guesses)
+        _str += 'Accuracy: {}%\n'.format(self.accuracy())
         return _str
 
     def accuracy(self):
@@ -134,13 +134,13 @@ class Quiz():
         if guess.lower() in [a.lower() for a in self.answers()]:
             self.solved += 1
             self.reset_attempts()
-            return "CORRECT!"
+            return True
         elif self.attempts == MAX_GUESSES:
             self.failed[self.question()] = self.answers()
             self.reset_attempts()
-            return self.answers()
+            return False
         else:
-            return "WRONG!"
+            return False
 
     def import_db(self, filename):
         """
