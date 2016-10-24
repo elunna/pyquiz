@@ -5,7 +5,10 @@ get a list of all current active connections. :: netstat -an
 Quickly list all TCP/UDP ports on the server. :: netstat -tulamp
 Ping google :: ping -c 4 www.google.com
 Display list of open sockets :: socklist
- :: ufw enable:: Turn on the Uncomplicated Firewall
+Turn on the Uncomplicated Firewall :: ufw enable:: 
 View all rules for the Uncomplicated Firewall :: ufw show raw
 View the status of the Uncomplicated Firewall :: ufw status verbose
 Grab the headers from a web page. :: /usr/bin/curl -I -L test
+
+View wireless network configuration :: iwconfig
+View or configure network interface and IP configuration :: ifconfig

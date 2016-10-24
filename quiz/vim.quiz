@@ -33,7 +33,5 @@ Open "file"(or create file) with Vim :: vim file
 Open "file" and recover from crash, with Vim :: vim -r file
 Open a file in read-only mode. :: vim -R file
 Open "file" and search for "term" with Vim :: vim +/term file
- :: 
- :: 
- :: 
+
 Edit your (vim?) repos :: vim /etc/apt/sources.list

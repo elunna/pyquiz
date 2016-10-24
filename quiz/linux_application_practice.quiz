@@ -1,2 +1,0 @@
-Get mp3 from youtube URL (named "test") :: youtube-dl --extract-audio --audio-format mp3 test
-Copy "file" to xclip clipboard :: cat file | xclip -selection c 

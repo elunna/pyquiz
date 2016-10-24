@@ -1,5 +1,5 @@
 tar czvf zip files  :: Create a gzip compressed tar "zip" from "files"(verbose).
- :: Create a bzip compressed tar "zip" from "files"(verbose):: tar cjvf zip files 
+Create a bzip compressed tar "zip" from "files"(verbose) :: tar cjvf zip files 
 tar cvf zip files  :: Create an uncompressed tar "zip" from "files"(verbose).
 tar xvf zip f  :: Unzip most general compressed files as "f"(verbose).
 cd -P link  :: Follow a symlink (supposedly)
@@ -13,16 +13,16 @@ mkdir -p x/y/z  :: Create a new directory tree "x/y/z"
 ls /dev  :: List device special files
 ls /boot  :: List files that are on my /boot partition
 ls -/media/$USER  :: List media devices (mounted?)
- :: Switch the root user account (preserve environment settings) ::su -
+Switch the root user account (preserve environment settings) :: su -
 sudo -i :: Become root in the current terminal(longer command)
 chmod --preserve-root :: cdmod with protection
 passwd -aS :: Show password status for all users
 Write junk onto the Hard Drive :: dd if=/dev/random of=/dev/sda
 Write 0's onto the Hard Drive :: dd if=/dev/zero of=/dev/sda
- :: 
+
 date -u  :: Display Greenwich Mean Time
 date +%m %d %y :: Display date (month date year)
- :: 
+
 Remove directory and suffix from a filename "path". :: basename path
 Send "cmd" output to standard output AND append to "file". :: cmd | tee -a file
 Send "cmd" output to "file" AND standard output. :: cmd | tee file
@@ -43,13 +43,17 @@ Translate all letters in "file" to lowercase. :: tr A-Z a-z < file
 Translate all letters in "file" to uppercase. :: tr a-z A-Z < file
 Retrieve the clipboard contents from xclip. :: xclip -o
 Paste from the X-clipboard :: xclip -selection o
- :: 
+
 List detailed information about a ZIP archive :: zipinfo file
 Search the manual page names and descriptions for "keyword" :: apropos keyword
 cdgrp with protection :: chgrp --preserve-root
- :: 
+
 Select only the duplicate lines from "file" (required to be sorted) :: uniq -d file
 View the unique lines from "file"(required to be sorted) :: uniq file
 Show lines from "file" with counts of duplicates(required to be sorted) :: uniq -c file
 Show permissions :: stat --printf "%a %n \n "
 Echo constant output stream of y and newlines. :: yes
+
+Synchronize the contents of dir2 to dir2, recursively. :: rsync -a --delete dir1 dir2/
+Simulate an rsync of dir2 to dir1. :: rsync -nv --delete dir1/ dir2/
+Synchronize the contents of dir2 to dir1. :: rsync --delete dir1/ dir2/ 

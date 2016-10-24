@@ -1,8 +1,8 @@
-show all the bash functions :: compgen -A function
+Show all the bash functions :: compgen -A function
 List all the bash shell aliases available to you :: compgen -a
-show all the bash built-ins :: compgen -b
+Show all the bash built-ins :: compgen -b
 To list all the commands available to you :: compgen -c
-show all the bash keywords :: compgen -k
+Show all the bash keywords :: compgen -k
 Change the date to Jan 1st, 2000 exactly midnight.(hint: mmdd :: date 010100002000.00
 The standard format for changing the date :: date mmddhhiiyyyy.ss
 Change the date to Jan 1st, 2000. :: date +%Y%m%d -s "20000101"
@@ -17,3 +17,4 @@ Display the total count of all the files currently open. :: lsof | wc -l
 Display a file in octal format. :: od -b file
 Display a file in character format. :: od -c file
 Display a file as 2-byte octal units. :: od -o file
+Force filesystem check after reboot by adding a file to the root. :: sudo touch /forcefsck

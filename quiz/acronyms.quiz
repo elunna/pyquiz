@@ -1,3 +1,26 @@
+A/V :: Audio Video
+DoS :: Denial of Service
+HTML :: Hypertext Markup Language
+JBOD :: Just a Bunch of Disks
+PoS :: Point of Sale
+PIN :: Personal Identification Number
+PnP :: Plug and Play
+RGB :: Red Green Blue
+UPS :: Uninterruptible Power Supply
+VPN :: Virtual Private Network
+ROM :: Read-Only Memory
+OS :: Operating System
+PC :: Personal Computer
+RAM :: Random-Access Memory
+HDD :: Hard Disk Drive
+VM :: Virtual Machine
+I/O :: Input/Output
+CD :: Compact Disc
+LED :: Light Emitting Diode
+MIDI :: Musical Instrument Digital Interface
+PDF :: Portable Document Format
+LAN :: Local Area Network
+
 FTP = :: File Transfer Protocol
 SSH = :: Secure Shell
 SMTP = :: Simple Mail Transfer Protocol
@@ -14,13 +37,14 @@ AFP = :: Apple Filing Protocol
 DHCP = :: Dynamic Host Configuration Protocol
 LDAP = :: Lightweight Directory Access Protocol
 SNMP = :: Simple Network Management Protocol
+
+
 BIOS :: Basic Input/Output System
 POST :: Power-On Self Test
 UEFI :: Unified Extensible Firmware Interface
 CPU :: Central Processing Unit
 GUID :: Globally Unique Identifer
 GPT
-NX Bit :: No Execute Bit :: No Execute
 
 FAT :: File Allocation Table
 EFI :: Extensible Firmware Interface
